@@ -14,7 +14,7 @@ render () {
     return (
       <View style={styles.containerStyle}>
         <Text style={styles.choreStyle}>{"Tidy-up"}</Text>
-        <Text style={styles.noteStyle}>{"Tidy-up"}</Text>
+        <Text style={styles.noteStyle}>{"Weekly"}</Text>
       </View>
     )
   }
