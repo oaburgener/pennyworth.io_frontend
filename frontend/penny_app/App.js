@@ -1,14 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import firebase from 'firebase';
 import Login from './Components/Login';
-
+import Card from './Components/Card';
 
 export default class App extends Component{
   // componentDidMount(){
@@ -25,7 +19,7 @@ export default class App extends Component{
   render() {
     return (
       <View>
-        <Login></Login>
+        <Card></Card>
       </View>
     );
   }
