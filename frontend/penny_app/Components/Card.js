@@ -17,7 +17,7 @@ render () {
         <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
         <Text style={styles.headerStyle}>{this.state.date}</Text>
         <View style={styles.pennyworkerContainer}>
-          <Image style={styles.pennyworkerImage} source={require('../Nate.jpg')} />
+          <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
           <Text style={styles.pennyworkerStyle}>{this.state.name}</Text>
         </View>
         <Chore></Chore>
@@ -36,11 +36,6 @@ const styles = {
     margin: 20,
     paddingLeft: 20,
     paddingTop: 5,
-    // overflow: 'hidden',
-    // shadowColor: 'grey',
-    // shadowOffset: { width: 0, height: 0 },
-    // shadowOpacity: 1,
-    // shadowRadius: 2,
   },
   headerStyle: {
     color: 'black',
