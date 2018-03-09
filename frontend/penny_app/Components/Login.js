@@ -1,12 +1,51 @@
 import React, { Component } from 'react';
-import { View, TextInput, Text, TouchableOpacity, Image } from 'react-native'
+import { View, TextInput, Text, TouchableOpacity, Image, secureTextEntry,autoCorrect, autoCapitalize} from 'react-native'
+import { connect } from 'react-redux'
+import { emailChanged, passwordChanged, loginUser } from '../actions/auth'
+
 
 class Login extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state = {
+  }
+
+  onEmailChange(text) {
+    this.props.emailChanged(text)
+  }
+
+  onPasswordChange(text) {
+    this.props.passwordChanged(text)
+  }
+
+  onButtonPress() {
+    const { email, password } = this.props
+
+    this.props.loginUser({ email, password })
+  }
+
+  renderError() {
+    if (this.props.error) {
+      return (
+        <View>
+          <Text style={ styles.errorTextStyle }>
+            { this.props.error }
+          </Text>
+        </View>
+      )
     }
   }
+
+  renderButton() {
+    if (this.props.loading) {
+      return <Spinner size="large" />
+    }
+    return (
+      <TouchableOpacity style={styles.loginButtonStyle}>
+        <Text style={styles.loginTextStyles}>Login</Text>
+      </TouchableOpacity>
+    )
+  }
+
   render() {
     const { viewStyles, textInputStyles, emailTextStyles, passwordTextStyles, loginTextStyles,
             submitTextStyles, loginButtonStyle, submitButtonStyle } = styles;
@@ -17,10 +56,14 @@ class Login extends Component {
         <Text style={emailTextStyles}>Email</Text>
         <TextInput style={textInputStyles} placeholder='example@gmail.com'/>
         <Text style={passwordTextStyles}>Password</Text>
-        <TextInput style={textInputStyles} placeholder='password'/>
-        <TouchableOpacity style={styles.loginButtonStyle}>
-          <Text style={styles.loginTextStyles}>Login</Text>
-        </TouchableOpacity>
+        <TextInput style={textInputStyles}
+          secureTextEntry={ this.props.secureTextEntry }
+          autoCorrect={ false }
+          autoCapitalize="none"
+          value={ this.props.value }
+          onChangeText={ this.props.onChangeText }
+          placeholder='password'
+        />
         <TouchableOpacity style={styles.submitButtonStyle}>
           <Text style={styles.submitTextStyles}>Sign Up</Text>
         </TouchableOpacity>
@@ -101,6 +144,14 @@ const styles = {
   }
 }
 
+const mapStateToProps = ({ auth }) => {
+  const { email, password, error, loading } = auth
+  return { email, password, error, loading }
+}
+
+export default connect(mapStateToProps, {
+  emailChanged, passwordChanged, loginUser
+})(Login)
 
 
-export default Login
+// export default Login
