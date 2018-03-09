@@ -36,11 +36,8 @@ class Login extends Component {
   }
 
   renderButton() {
-    if (this.props.loading) {
-      return <Spinner size="large" />
-    }
     return (
-      <TouchableOpacity style={styles.loginButtonStyle}>
+      <TouchableOpacity style={styles.loginButtonStyle} onPress={ this.onButtonPress.bind(this)}>
         <Text style={styles.loginTextStyles}>Login</Text>
       </TouchableOpacity>
     )
@@ -54,19 +51,30 @@ class Login extends Component {
       <View style={viewStyles}>
         <Image style={{width: '75%', height: 100, resizeMode: 'center', marginTop:25}} source={require('../assets/pw_logo.png')}/>
         <Text style={emailTextStyles}>Email</Text>
-        <TextInput style={textInputStyles} placeholder='example@gmail.com'/>
+        <TextInput
+          style={textInputStyles}
+          placeholder='example@email.com'
+          autoCapitalize="none"
+          autoCorrect={ false }
+          onChangeText={ this.onEmailChange.bind(this) }
+          value={ this.props.email}/>
         <Text style={passwordTextStyles}>Password</Text>
         <TextInput style={textInputStyles}
-          secureTextEntry={ this.props.secureTextEntry }
+          secureTextEntry
+          placeholder='password'
           autoCorrect={ false }
           autoCapitalize="none"
-          value={ this.props.value }
-          onChangeText={ this.props.onChangeText }
-          placeholder='password'
+          onChangeText={ this.onPasswordChange.bind(this) }
+          value={ this.props.password }
         />
+        { this.renderError() }
+        { this.renderButton()}
+        {/* <TouchableOpacity style={styles.loginButtonStyle}>
+          <Text style={styles.loginTextStyles}>Login</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.submitButtonStyle}>
           <Text style={styles.submitTextStyles}>Sign Up</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
 
 
