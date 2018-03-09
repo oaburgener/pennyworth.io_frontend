@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, TextInput, Text, TouchableOpacity, Image } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 
 class Login extends Component {
   constructor(props){
@@ -15,26 +16,26 @@ class Login extends Component {
       <View style={viewStyles}>
         <Image style={{width: '75%', height: 100, resizeMode: 'center', marginTop:25}} source={require('../assets/pw_logo.png')}/>
         <Text style={emailTextStyles}>Email</Text>
-        <TextInput style={textInputStyles} placeholder='example@gmail.com'/>
+          <TextInput style={textInputStyles} placeholder='example@gmail.com'/>
         <Text style={passwordTextStyles}>Password</Text>
-        <TextInput style={textInputStyles} placeholder='password'/>
-        <TouchableOpacity style={styles.loginButtonStyle}>
+          <TextInput style={textInputStyles} placeholder='password'/>
+        <TouchableOpacity style={styles.loginButtonStyle} onPress={() => Actions.pennyworker()}>
           <Text style={styles.loginTextStyles}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.submitButtonStyle}>
           <Text style={styles.submitTextStyles}>Sign Up</Text>
         </TouchableOpacity>
       </View>
-
-
     )
   }
 }
 
 const styles = {
   viewStyles: {
+    flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
   textInputStyles: {
     height: 60,

@@ -20,19 +20,19 @@ class Service extends Component {
  render() {
    return (
      <View>
-         <View style={styles.serviceContainer}>
-           <Text style={styles.serviceStyle}>{"Tidy-up"}</Text>
-           <Switch style={styles.toggle}
-             onTintColor = '#982D37'
-            />
-          </View>
-          <View style={styles.notesContainer}>
-            <Text style={styles.notes}>{"Notes"}</Text>
-            <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text>
-          </View>
-     </View>
-   )
- }
+       <View style={styles.serviceContainer}>
+         <Text style={styles.serviceStyle}>{"Tidy-up"}</Text>
+         <Switch style={styles.toggle}
+           onTintColor = '#982D37'
+          />
+        </View>
+        <View style={styles.notesContainer}>
+          <Text style={styles.notes}>{"Notes"}</Text>
+          <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text>
+        </View>
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
