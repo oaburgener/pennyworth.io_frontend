@@ -1,4 +1,7 @@
 import {
+  FIRSTNAME_CHANGED,
+  LASTNAME_CHANGED,
+  ADDRESS_CHANGED,
   EMAIL_CHANGED,
   PASSWORD_CHANGED,
   LOGIN_USER_SUCCESS,
@@ -7,6 +10,9 @@ import {
 } from '../actions/auth'
 
 const INITIAL_STATE = {
+  firstName: '',
+  lastName: '',
+  address:'',
   email: '',
   password: '',
   user: null,
@@ -17,6 +23,12 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
+    case FIRSTNAME_CHANGED:
+      return{...state, firstName: action.payload}
+    case LASTNAME_CHANGED:
+      return{...state, lastName: action.payload}
+    case ADDRESS_CHANGED:
+      return{...state, address: action.payload}
     case EMAIL_CHANGED:
       return { ...state, email: action.payload }
     case PASSWORD_CHANGED:

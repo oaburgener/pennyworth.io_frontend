@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from 'redux'
 import ReduxThunk from 'redux-thunk'
 import reducers from './reducers'
 import Login from './Components/Login'
+import SignUp from './Components/SignUp'
 import Card from './Components/Card'
 import Schedule from './Components/Schedule'
 import ServiceContainer from './Components/ServiceContainer'
@@ -29,7 +30,7 @@ export default class App extends Component {
 
     return (
       <Provider store={ store }>
-        <Login></Login>
+        <SignUp></SignUp>
       </Provider>
     );
   }
