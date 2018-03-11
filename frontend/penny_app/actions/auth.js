@@ -77,15 +77,15 @@ export const signUpUser = ({ first_name, last_name, email, token, address }) => 
           .then(user => loginUserSuccess(dispatch, user))
           .catch(() => loginUserFail(dispatch))
       })
-
-      const response = await fetch('http://localhost:3001/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type' : 'application/json',
-          'Accept': 'application/json'
-        },
-        body:body
-      })
+      //
+      // const response = await fetch('http://localhost:3001/users', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type' : 'application/json',
+      //     'Accept': 'application/json'
+      //   },
+      //   body:body
+      // })
   }
 }
 // // return (dispatch) is from thunk
