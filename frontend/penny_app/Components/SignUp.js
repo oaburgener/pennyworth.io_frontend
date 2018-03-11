@@ -29,9 +29,9 @@ class SignUp extends Component {
   }
 
   onButtonPress() {
-    const { first_name, last_name, email, token, address } = this.props
+    const { first_name, last_name, email, password, address } = this.props
 
-    this.props.signUpUser({ first_name, last_name, email, token, address })
+    this.props.signUpUser({ first_name, last_name, email, password, address })
   }
 
   renderError() {
@@ -114,6 +114,8 @@ class SignUp extends Component {
 
 const styles = {
   viewStyles: {
+    flex: 1,
+    backgroundColor:'white',
     justifyContent: 'center',
     alignItems: 'center'
   },
