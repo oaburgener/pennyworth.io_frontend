@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { View, TextInput, Text, TouchableOpacity, Image, secureTextEntry,autoCorrect, autoCapitalize} from 'react-native'
+import React, { Component } from 'react'
+import { Actions } from 'react-native-router-flux'
 import { connect } from 'react-redux'
+import { View, TextInput, Text, TouchableOpacity, Image, secureTextEntry, autoCorrect, autoCapitalize} from 'react-native'
 import { emailChanged, passwordChanged, loginUser } from '../actions/auth'
-
 
 class Login extends Component {
   constructor(props) {
@@ -45,7 +45,7 @@ class Login extends Component {
 
   render() {
     const { viewStyles, textInputStyles, emailTextStyles, passwordTextStyles, loginTextStyles,
-            submitTextStyles, loginButtonStyle, submitButtonStyle } = styles;
+            submitTextStyles, loginButtonStyle, submitButtonStyle } = styles
 
     return (
       <View style={viewStyles}>
@@ -69,23 +69,17 @@ class Login extends Component {
         />
         { this.renderError() }
         { this.renderButton()}
-        {/* <TouchableOpacity style={styles.loginButtonStyle}>
-          <Text style={styles.loginTextStyles}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.submitButtonStyle}>
-          <Text style={styles.submitTextStyles}>Sign Up</Text>
-        </TouchableOpacity> */}
       </View>
-
-
     )
   }
 }
 
 const styles = {
   viewStyles: {
+    flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
   textInputStyles: {
     height: 60,
@@ -160,6 +154,3 @@ const mapStateToProps = ({ auth }) => {
 export default connect(mapStateToProps, {
   emailChanged, passwordChanged, loginUser
 })(Login)
-
-
-// export default Login

@@ -1,18 +1,14 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
 import firebase from 'firebase'
+import Router from './Router'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import ReduxThunk from 'redux-thunk'
 import reducers from './reducers'
-import Login from './Components/Login'
-import SignUp from './Components/SignUp'
-import Card from './Components/Card'
-import Schedule from './Components/Schedule'
-import ServiceContainer from './Components/ServiceContainer'
-
 
 export default class App extends Component {
+
   componentWillMount(){
     firebase.initializeApp({
       apiKey: "AIzaSyAjvY8NfSXL8a2bM9lysxnVv302NYz9ERU",
@@ -30,8 +26,8 @@ export default class App extends Component {
 
     return (
       <Provider store={ store }>
-        <SignUp></SignUp>
+        <Router />
       </Provider>
-    );
+    )
   }
 }
