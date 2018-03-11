@@ -1,14 +1,8 @@
-<<<<<<< HEAD
 import React, { Component } from 'react'
-import { View, TextInput, Text, TouchableOpacity, Image } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-=======
-import React, { Component } from 'react';
-import { View, TextInput, Text, TouchableOpacity, Image, secureTextEntry,autoCorrect, autoCapitalize} from 'react-native'
 import { connect } from 'react-redux'
+import { View, TextInput, Text, TouchableOpacity, Image, secureTextEntry, autoCorrect, autoCapitalize} from 'react-native'
 import { emailChanged, passwordChanged, loginUser } from '../actions/auth'
-
->>>>>>> 38ff251190d9acae4544ec9d40ee11b8566cb601
 
 class Login extends Component {
   constructor(props) {
@@ -55,14 +49,6 @@ class Login extends Component {
 
     return (
       <View style={viewStyles}>
-<<<<<<< HEAD
-        <Image style={{width: '75%', height: 100, resizeMode: 'center'}} source={require('../assets/pw_logo.png')}/>
-          <Text style={emailTextStyles}>Email</Text>
-        <TextInput style={textInputStyles} placeholder='example@gmail.com'/>
-          <Text style={passwordTextStyles}>Password</Text>
-        <TextInput style={textInputStyles} placeholder='password'/>
-        <TouchableOpacity style={styles.loginButtonStyle} onPress={()=> Actions.services()}>
-=======
         <Image style={{width: '75%', height: 100, resizeMode: 'center', marginTop:25}} source={require('../assets/pw_logo.png')}/>
         <Text style={emailTextStyles}>Email</Text>
         <TextInput
@@ -83,13 +69,6 @@ class Login extends Component {
         />
         { this.renderError() }
         { this.renderButton()}
-        {/* <TouchableOpacity style={styles.loginButtonStyle}>
->>>>>>> 38ff251190d9acae4544ec9d40ee11b8566cb601
-          <Text style={styles.loginTextStyles}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.submitButtonStyle}>
-          <Text style={styles.submitTextStyles}>Sign Up</Text>
-        </TouchableOpacity> */}
       </View>
     )
   }
@@ -167,9 +146,6 @@ const styles = {
   }
 }
 
-<<<<<<< HEAD
-export default Login
-=======
 const mapStateToProps = ({ auth }) => {
   const { email, password, error, loading } = auth
   return { email, password, error, loading }
@@ -178,7 +154,3 @@ const mapStateToProps = ({ auth }) => {
 export default connect(mapStateToProps, {
   emailChanged, passwordChanged, loginUser
 })(Login)
-
-
-// export default Login
->>>>>>> 38ff251190d9acae4544ec9d40ee11b8566cb601
