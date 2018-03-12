@@ -44,7 +44,6 @@ export const passwordChanged = (text) => {
   }
 }
 
-// return (dispatch) is from thunk
 export const loginUser = ({ email, password }) => {
   return (dispatch) => {
     dispatch({ type: LOGIN_USER })
@@ -61,12 +60,17 @@ export const loginUser = ({ email, password }) => {
   }
 }
 
-export const signUpUser = ({ first_name, last_name, email, token, address }) => {
+export const signUpUser = ({ first_name, last_name, email, password, address }) => {
 
-  let body = JSON.stringify({ first_name:first_name, last_name:last_name, email:email, token:token, address:address })
+  let body = {
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
+    password: password,
+    address: address
+  }
 
   return async (dispatch) => {
-    dispatch({ type: LOGIN_USER })
 
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(user => loginUserSuccess(dispatch, user))
@@ -77,43 +81,19 @@ export const signUpUser = ({ first_name, last_name, email, token, address }) => 
           .then(user => loginUserSuccess(dispatch, user))
           .catch(() => loginUserFail(dispatch))
       })
-      //
-      // const response = await fetch('http://localhost:3001/users', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type' : 'application/json',
-      //     'Accept': 'application/json'
-      //   },
-      //   body:body
-      // })
+
+
+    await fetch('http://localhost:3001/users/', {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+    })
+    dispatch({ type: LOGIN_USER })
   }
 }
-// // return (dispatch) is from thunk
-// export const loginUser = ({ email, password }) => {
-//   return (dispatch) => {
-//     dispatch({ type: LOGIN_USER })
-//
-//     firebase.auth().signInWithEmailAndPassword(email, password)
-//       .then(user => loginUserSuccess(dispatch, user))
-//       .catch((error) => {
-//         console.log('action/index error', error)
-//       })
-//   }
-// }
-//
-// export const signUpUser = ({firstName, lastName, email, password, address}) => {
-//   return (dispatch) => {
-//     dispatch({ type: SIGNUP_USER})
-//
-//     firebase.auth().createUserWithEmailAndPassword(email, password)
-//
-//     .catch(function(error) {
-//       var errorCode = error.code;
-//       var errorMessage = error.message;
-//       // ...
-//     });
-//   }
-// }
 
 const loginUserFail = (dispatch) => {
   dispatch({ type: LOGIN_USER_FAIL })
