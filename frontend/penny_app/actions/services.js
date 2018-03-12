@@ -5,10 +5,10 @@ export const getServices = () => {
   return async (dispatch) => {
     const response = await fetch('http://localhost:3001/services/')
     const json = await response.json()
-
+console.log(json);
     dispatch({
       type: GET_SERVICES,
-      data: json.data,
+      data: json,
     })
   }
 }

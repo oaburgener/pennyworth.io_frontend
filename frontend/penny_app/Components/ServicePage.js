@@ -7,15 +7,15 @@ import {
  Switch,
  ScrollView,
 } from 'react-native'
-import Service from './Service'
+import ServiceContainer from '../Containers/ServiceContainer'
 
-class ServiceContainer extends Component {
+class ServicePage extends Component {
 
  render() {
    return (
      <View style={styles.viewContainer}>
        <ScrollView>
-         <Service></Service>
+         <ServiceContainer />
        </ScrollView>
        <View>
          <TouchableOpacity style={styles.submitButtonStyle}>
@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
    },
 })
 
-export default ServiceContainer
+export default ServicePage

@@ -9,27 +9,25 @@ import {
 } from 'react-native'
 
 class Service extends Component {
- constructor(props) {
-   super(props)
-   this.state = {
-     service: '',
-     notes: '',
-   }
- }
-
+  componentDidMount(){
+    this.props.getServices()
+  }
  render() {
+
    return (
      <View>
-         <View style={styles.serviceContainer}>
-           <Text style={styles.serviceStyle}>{"Tidy-up"}</Text>
-           <Switch style={styles.toggle}
-             onTintColor = '#982D37'
-            />
-          </View>
-          <View style={styles.notesContainer}>
-            <Text style={styles.notes}>{"Notes"}</Text>
-            <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text>
-          </View>
+       <View style={styles.serviceContainer}>
+         {this.props.services.map(ele => {
+           return(
+             <Text style={styles.serviceStyle}>hello</Text>
+           )
+         })}
+         <Switch style={styles.toggle} onTintColor = '#982D37' />
+        </View>
+        <View style={styles.notesContainer}>
+          <Text style={styles.notes}>{"Notes"}</Text>
+          <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text>
+        </View>
      </View>
    )
  }

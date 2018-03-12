@@ -2,10 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getServices } from '../actions/services'
-import Service from '../components/Service'
+import Service from '../Components/Service'
 
 const mapStateToProps = state => ({
-  
+  services: state.ServiceReducer.services
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
@@ -13,7 +13,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch)
 
 const ServiceContainer = connect (
-  mapStateToProps,mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Service)
 
 export default ServiceContainer

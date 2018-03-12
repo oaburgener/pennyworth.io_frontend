@@ -16,7 +16,7 @@ const RouterComp = () => {
 
           <Scene key="services" component={ServicePage} title="Services" />
 
-          <Scene key="pennyworker" component={Card} title="Scheduled" />
+          {/* <Scene key="pennyworker" component={Card} title="Scheduled" /> */}
 
       </Scene>
     </Router>
