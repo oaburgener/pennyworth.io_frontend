@@ -66,31 +66,35 @@ export const signUpUser = ({ first_name, last_name, email, password, address }) 
     first_name: first_name,
     last_name: last_name,
     email: email,
-    password: password,
+    password: '',
     address: address
   }
 
   return async (dispatch) => {
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    await firebase.auth().signInWithEmailAndPassword(email, password)
       .then(user => loginUserSuccess(dispatch, user))
       .catch((error) => {
         console.log('action/index error', error)
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
           .then(user => loginUserSuccess(dispatch, user))
-          .catch(() => loginUserFail(dispatch))
+          firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              body.password = user.uid
+              console.log(body.password)
+
+              fetch('http://localhost:3001/users/', {
+                method: 'POST',
+                body: JSON.stringify(body),
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+                },
+              })
+            }
+          })
       })
-
-
-    await fetch('http://localhost:3001/users/', {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-    })
     dispatch({ type: LOGIN_USER })
   }
 }

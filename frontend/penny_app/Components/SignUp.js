@@ -30,7 +30,7 @@ class SignUp extends Component {
 
   onButtonPress() {
     const { first_name, last_name, email, password, address } = this.props
-    console.log(this.props)
+    
     this.props.signUpUser({ first_name, last_name, email, password, address })
   }
 
