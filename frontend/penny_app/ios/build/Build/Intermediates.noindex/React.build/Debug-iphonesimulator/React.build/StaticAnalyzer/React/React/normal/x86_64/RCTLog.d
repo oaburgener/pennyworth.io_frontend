@@ -1,15 +1,15 @@
 dependencies: \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTLog.mm \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTBridge+Private.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Modules/RCTRedBox.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/React/Base/RCTErrorCustomizer.h
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTLog.mm \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Modules/RCTRedBox.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/React/Base/RCTErrorCustomizer.h

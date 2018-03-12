@@ -1,19 +1,19 @@
 dependencies: \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTDecayAnimation.m \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTDecayAnimation.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTAnimationDriver.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
-  /Users/oliviaburgener/g68/final_proj/pennyworth.io/frontend/penny_app/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTDecayAnimation.m \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTDecayAnimation.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTAnimationDriver.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
+  /Users/ashleyamato/Desktop/g68/project-folder/pennyworth.io_frontend/frontend/penny_app/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h
