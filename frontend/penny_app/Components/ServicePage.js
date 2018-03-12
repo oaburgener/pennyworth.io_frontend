@@ -17,7 +17,7 @@ class ServicePage extends Component {
        <ScrollView>
          <ServiceContainer />
        </ScrollView>
-       <View>
+       <View style={styles.buttonContainer}>
          <TouchableOpacity style={styles.submitButtonStyle}>
            <Text style={styles.submitTextStyles}>Update</Text>
          </TouchableOpacity>
@@ -49,6 +49,10 @@ const styles = StyleSheet.create({
      fontWeight: '600',
      paddingTop: 15,
      paddingBottom: 15
+   },
+   buttonContainer: {
+     paddingTop: 20,
+     backgroundColor: '#efefef',
    },
 })
 
