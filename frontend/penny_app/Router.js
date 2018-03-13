@@ -10,7 +10,7 @@ const RouterComp = () => {
     <Router>
       <Scene key="root" >
 
-          <Scene key="login" component={SignUp} hideNavBar initial/>
+          <Scene key="login" component={Login} hideNavBar initial/>
 
           <Scene key="services" component={ServiceContainer} title="Services" />
 

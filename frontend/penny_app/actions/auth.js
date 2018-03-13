@@ -50,15 +50,21 @@ export const loginUser = ({ email, password }) => {
 
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(user => loginUserSuccess(dispatch, user))
-      .catch((error) => {
-        console.log('action/index error', error)
 
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then(user => loginUserSuccess(dispatch, user))
-          .catch(() => loginUserFail(dispatch))
-      })
-  }
+        firebase.auth().currentUser.getIdToken(true)
+        .then(function(idToken) {
+          console.log(idToken)
+        fetch(`http://localhost:3001/users/${idToken}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+        })
+    })
+  }  
 }
+
 
 export const signUpUser = ({ first_name, last_name, email, password, address }) => {
 
