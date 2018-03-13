@@ -37,14 +37,9 @@ class Login extends Component {
 
   renderButton() {
     return (
-      <View>
-        <TouchableOpacity style={styles.loginButtonStyle} onPress={ this.onButtonPress.bind(this)}>
-          <Text style={styles.loginTextStyles}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.signUpButtonStyle} onPress={ this.onButtonPress.bind(this)}>
-          <Text style={styles.signUpTextStyles}>Sign Up</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity style={styles.loginButtonStyle} onPress={ this.onButtonPress.bind(this)}>
+        <Text style={styles.loginTextStyles}>Login</Text>
+      </TouchableOpacity>
     )
   }
 
@@ -74,6 +69,9 @@ class Login extends Component {
         />
         { this.renderError() }
         { this.renderButton()}
+        <TouchableOpacity style={styles.signUpButtonStyle} onPress={() => Actions.signup()}>
+          <Text style={styles.signUpTextStyles}>New User?</Text>
+        </TouchableOpacity>
       </View>
     )
   }
