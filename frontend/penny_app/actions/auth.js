@@ -94,7 +94,6 @@ export const signUpUser = ({ first_name, last_name, email, password, address }) 
               })
             }
           })
-      // })
     dispatch({ type: SIGNUP })
   }
 }
