@@ -8,6 +8,7 @@ export const PASSWORD_CHANGED = 'password_changed'
 export const LOGIN_USER_SUCCESS = 'login_user_success'
 export const LOGIN_USER_FAIL = 'login_user_fail'
 export const LOGIN_USER = 'login_user'
+export const SIGNUP = 'signup'
 
 export const firstNameChanged = (text) => {
   return {
@@ -77,12 +78,7 @@ export const signUpUser = ({ first_name, last_name, email, password, address }) 
 
   return async (dispatch) => {
 
-    await firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(user => loginUserSuccess(dispatch, user))
-      .catch((error) => {
-        console.log('action/index error', error)
-
-        firebase.auth().createUserWithEmailAndPassword(email, password)
+        await firebase.auth().createUserWithEmailAndPassword(email, password)
           .then(user => loginUserSuccess(dispatch, user))
           firebase.auth().onAuthStateChanged((user) => {
             if (user) {
@@ -98,8 +94,8 @@ export const signUpUser = ({ first_name, last_name, email, password, address }) 
               })
             }
           })
-      })
-    dispatch({ type: LOGIN_USER })
+      // })
+    dispatch({ type: SIGNUP })
   }
 }
 
