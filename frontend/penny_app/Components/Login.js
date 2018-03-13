@@ -37,9 +37,14 @@ class Login extends Component {
 
   renderButton() {
     return (
-      <TouchableOpacity style={styles.loginButtonStyle} onPress={ this.onButtonPress.bind(this)}>
-        <Text style={styles.loginTextStyles}>Login</Text>
-      </TouchableOpacity>
+      <View>
+        <TouchableOpacity style={styles.loginButtonStyle} onPress={ this.onButtonPress.bind(this)}>
+          <Text style={styles.loginTextStyles}>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.signUpButtonStyle} onPress={ this.onButtonPress.bind(this)}>
+          <Text style={styles.signUpTextStyles}>Sign Up</Text>
+        </TouchableOpacity>
+      </View>
     )
   }
 
@@ -116,14 +121,6 @@ const styles = {
     paddingTop: 15,
     paddingBottom: 15
   },
-  submitTextStyles: {
-    alignSelf: 'center',
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
-    paddingTop: 15,
-    paddingBottom: 15
-  },
   loginButtonStyle: {
     alignSelf: 'stretch',
     backgroundColor: '#fff',
@@ -134,15 +131,24 @@ const styles = {
     marginRight: 40,
     marginTop: 50
   },
-  submitButtonStyle: {
+  signUpTextStyles: {
+    alignSelf: 'center',
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+    paddingTop: 15,
+    paddingBottom: 15
+  },
+  signUpButtonStyle: {
     alignSelf: 'stretch',
+    width: 300,
     backgroundColor: '#982D37',
     borderRadius: 7,
     borderWidth: 1,
     borderColor: '#982D37',
     marginLeft: 40,
     marginRight: 40,
-    marginTop: 10
+    marginTop: 30
   }
 }
 

@@ -18,7 +18,7 @@ export const getServices = () => {
 
 export const getNotes = () => {
 
-  let tokenId =
+  // let tokenId =
 
   return async (dispatch) => {
     const response = await fetch(`http://localhost:3001/users_services/${tokenId}`)
