@@ -82,7 +82,6 @@ export const signUpUser = ({ first_name, last_name, email, password, address }) 
           firebase.auth().onAuthStateChanged((user) => {
             if (user) {
               body.password = user.uid
-              console.log(body.password)
 
               fetch('http://localhost:3001/users/', {
                 method: 'POST',
