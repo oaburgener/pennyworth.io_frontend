@@ -9,7 +9,7 @@ import Note from '../Components/Note'
 
 const mapStateToProps = state => ({
   services: state.ServiceReducer.services,
-  notes: state.ServiceReducer.notes,
+  notes: state.ServiceReducer.notes
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
@@ -17,9 +17,9 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   getNotes,
 }, dispatch)
 
-const ServiceContainer = connect (
+const NoteContainer = connect (
   mapStateToProps,
   mapDispatchToProps
-)(Service)
+)(Note)
 
-export default ServiceContainer
+export default NoteContainer

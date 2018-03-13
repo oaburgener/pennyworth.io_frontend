@@ -12,11 +12,11 @@ const RouterComp = () => {
     <Router>
       <Scene key="root" >
 
-          {/* <Scene key="login" component={ServiceContainer} hideNavBar initial/> */}
+          {/* <Scene key="login" component={ServicePage} hideNavBar initial/> */}
 
           <Scene key="services" component={ServicePage} title="Services" />
 
-          {/* <Scene key="pennyworker" component={Card} title="Scheduled" /> */}
+          <Scene key="pennyworker" component={Card} title="Scheduled" />
 
       </Scene>
     </Router>

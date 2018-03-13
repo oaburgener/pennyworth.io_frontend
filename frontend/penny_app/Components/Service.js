@@ -7,12 +7,29 @@ import {
  Switch,
  ScrollView,
 } from 'react-native'
+import Note from './Note'
+import NoteContainer from '../reducers/NoteContainer'
+
 
 class Service extends Component {
   componentDidMount(){
     this.props.getServices()
+    this.props.getNotes()
   }
+
+  renderServices() {
+    return this.props.services.map(ele =>{
+      return ele.label
+    })
+  }
+
  render() {
+
+  //  return (
+  //    <View>
+  //      {console.log(this.renderUserServices())}
+  //    </View>
+  //  )
 
    return (
      <View>

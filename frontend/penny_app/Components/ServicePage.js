@@ -8,6 +8,7 @@ import {
  ScrollView,
 } from 'react-native'
 import ServiceContainer from '../Containers/ServiceContainer'
+import { Actions } from 'react-native-router-flux'
 
 class ServicePage extends Component {
 
@@ -18,7 +19,7 @@ class ServicePage extends Component {
          <ServiceContainer />
        </ScrollView>
        <View style={styles.buttonContainer}>
-         <TouchableOpacity style={styles.submitButtonStyle}>
+         <TouchableOpacity style={styles.submitButtonStyle} onPress={()=> Actions.pennyworker()}>
            <Text style={styles.submitTextStyles}>Update</Text>
          </TouchableOpacity>
        </View>
