@@ -53,8 +53,7 @@ export const loginUser = ({ email, password }) => {
 
         firebase.auth().currentUser.getIdToken(true)
         .then(function(idToken) {
-          console.log(idToken)
-        fetch(`http://localhost:3001/users/${idToken}`, {
+        fetch(`http://localhost:3001/users_services/${idToken}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -62,7 +61,7 @@ export const loginUser = ({ email, password }) => {
           },
         })
     })
-  }  
+  }
 }
 
 
