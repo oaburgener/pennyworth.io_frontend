@@ -8,6 +8,7 @@ export const PASSWORD_CHANGED = 'password_changed'
 export const LOGIN_USER_SUCCESS = 'login_user_success'
 export const LOGIN_USER_FAIL = 'login_user_fail'
 export const LOGIN_USER = 'login_user'
+export const SIGNUP = 'signup'
 
 export const firstNameChanged = (text) => {
   return {
@@ -50,15 +51,20 @@ export const loginUser = ({ email, password }) => {
 
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(user => loginUserSuccess(dispatch, user))
-      .catch((error) => {
-        console.log('action/index error', error)
 
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then(user => loginUserSuccess(dispatch, user))
-          .catch(() => loginUserFail(dispatch))
-      })
+        firebase.auth().currentUser.getIdToken(true)
+        .then(function(idToken) {
+        fetch(`http://localhost:3001/users_services/${idToken}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+        })
+    })
   }
 }
+
 
 export const signUpUser = ({ first_name, last_name, email, password, address }) => {
 
@@ -66,32 +72,29 @@ export const signUpUser = ({ first_name, last_name, email, password, address }) 
     first_name: first_name,
     last_name: last_name,
     email: email,
-    password: password,
+    password: '',
     address: address
   }
 
   return async (dispatch) => {
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(user => loginUserSuccess(dispatch, user))
-      .catch((error) => {
-        console.log('action/index error', error)
-
-        firebase.auth().createUserWithEmailAndPassword(email, password)
+        await firebase.auth().createUserWithEmailAndPassword(email, password)
           .then(user => loginUserSuccess(dispatch, user))
-          .catch(() => loginUserFail(dispatch))
-      })
+          firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              body.password = user.uid
 
-
-    await fetch('http://localhost:3001/users/', {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-    })
-    dispatch({ type: LOGIN_USER })
+              fetch('http://localhost:3001/users/', {
+                method: 'POST',
+                body: JSON.stringify(body),
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+                },
+              })
+            }
+          })
+    dispatch({ type: SIGNUP })
   }
 }
 

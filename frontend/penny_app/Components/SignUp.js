@@ -30,7 +30,7 @@ class SignUp extends Component {
 
   onButtonPress() {
     const { first_name, last_name, email, password, address } = this.props
-
+    
     this.props.signUpUser({ first_name, last_name, email, password, address })
   }
 
@@ -67,7 +67,7 @@ class SignUp extends Component {
           autoCapitalize="none"
           autoCorrect={ false }
           onChangeText={ this.onFirstNameChanged.bind(this) }
-          value={ this.props.firstName }/>
+          value={ this.props.first_name }/>
 
         <Text style={emailTextStyles}>Last Name</Text>
         <TextInput
@@ -76,7 +76,7 @@ class SignUp extends Component {
           autoCapitalize="none"
           autoCorrect={ false }
           onChangeText={ this.onLastNameChanged.bind(this) }
-          value={ this.props.lastName }/>
+          value={ this.props.last_name }/>
 
         <Text style={emailTextStyles}>Address</Text>
         <TextInput
@@ -167,8 +167,8 @@ const styles = {
 }
 
 const mapStateToProps = ({ auth }) => {
-  const { email, password, error, loading } = auth
-  return { email, password, error, loading }
+  const { first_name, last_name, address, email, password, error, loading } = auth
+  return { first_name, last_name, address, email, password, error, loading }
 }
 
 export default connect(mapStateToProps, {
