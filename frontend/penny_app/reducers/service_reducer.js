@@ -1,11 +1,11 @@
 import {
   GET_SERVICES,
-  GET_NOTES,
+  GET_USER_SERVICES,
 } from '../actions/services'
 
 let initialState = {
   services: [],
-  notes: []
+  userServices: [],
 }
 
 export default (state = initialState, action) => {
@@ -15,10 +15,10 @@ export default (state = initialState, action) => {
       ...state,
       services: action.data
     }
-    case GET_NOTES:
+    case GET_USER_SERVICES:
     return {
       ...state,
-      notes: action.data
+      userServices: action.data
     }
     default: return state
   }

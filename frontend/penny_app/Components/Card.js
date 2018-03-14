@@ -3,25 +3,28 @@ import { View, Text, Image } from 'react-native';
 import Chore from './Chore'
 
 class Card extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      date: 'Tuesday, March 6',
-      name: 'Nate'
-    }
+  componentDidMount(){
+    this.props.getUserServices()
   }
 
 render () {
     return (
-      <View style={styles.containerStyle}>
-        <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
-        <Text style={styles.headerStyle}>{this.state.date}</Text>
-        <View style={styles.pennyworkerContainer}>
-          <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
-          <Text style={styles.pennyworkerStyle}>{this.state.name}</Text>
-        </View>
-        <Chore></Chore>
-        <Text style={styles.editDetails}>{"Edit Details"}</Text>
+      <View>
+        {console.log(this.props.userServices)}
+        {/* {this.props.userServices.map(ele => { */}
+          return(
+            <View style={styles.containerStyle}>
+              <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
+              <Text style={styles.headerStyle}>{"date"}</Text>
+              <View style={styles.pennyworkerContainer}>
+                <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
+                <Text style={styles.pennyworkerStyle}>{"name"}</Text>
+              </View>
+              <Chore></Chore>
+              <Text style={styles.editDetails}>{"Edit Details"}</Text>
+            </View>
+          )
+        {/* })} */}
       </View>
     )
   }
@@ -29,6 +32,7 @@ render () {
 
 const styles = {
   containerStyle: {
+    backgroundColor: 'white',
     height: 'auto',
     borderColor: '#F4F4F4',
     borderWidth: 1,

@@ -82,6 +82,8 @@ export const signUpUser = ({ first_name, last_name, email, password, address }) 
 
         await firebase.auth().createUserWithEmailAndPassword(email, password)
           .then(user => loginUserSuccess(dispatch, user))
+          .catch(() => loginUserFail(dispatch))
+
           firebase.auth().onAuthStateChanged((user) => {
             if (user) {
               body.password = user.uid

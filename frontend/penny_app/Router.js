@@ -2,7 +2,7 @@ import React from 'react'
 import { Scene, Router } from 'react-native-router-flux'
 import Login from './Components/Login'
 import ServicePage from './Components/ServicePage'
-import Card from './Components/Card'
+import CardContainer from './Containers/CardContainer'
 import SignUp from './Components/SignUp'
 import Schedule from './Components/Schedule'
 
@@ -18,7 +18,7 @@ const RouterComp = () => {
 
           <Scene key="services" component={ServicePage} title="Services" />
 
-          <Scene key="card" component={Card} title="Scheduled" />
+          <Scene key="card" component={CardContainer} title="Scheduled" />
 
       </Scene>
     </Router>
