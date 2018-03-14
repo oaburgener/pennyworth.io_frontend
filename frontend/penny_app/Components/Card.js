@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
-import Chore from './Chore'
+import ChoreContainer from '../Containers/ChoreContainer'
 
 class Card extends Component {
   componentDidMount() {
@@ -8,20 +8,22 @@ class Card extends Component {
   }
 
   render () {
+
     return (
       <View>
-        {/* {console.log(this.props.userServices)} */}
-        {this.props.userServices && this.props.userServices.map(ele => {
+        {this.props.userServices && this.props.userServices.map(service => {
           return(
-            <View style={styles.containerStyle}>
+            <View key={service.id} style={styles.containerStyle}>
               <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
-              <Text style={styles.headerStyle}>{"date"}</Text>
+              <Text style={styles.headerStyle}>{service.date}</Text>
               <View style={styles.pennyworkerContainer}>
                 <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
                 <Text style={styles.pennyworkerStyle}>{"name"}</Text>
               </View>
-              <Chore></Chore>
-              <Text style={styles.editDetails}>{"Edit Details"}</Text>
+                {/* <ChoreContainer /> */}
+                <Text style={styles.choreStyle}>{service.label}</Text>
+                <Text style={styles.noteStyle}>{service.notes}</Text>
+                <Text style={styles.editDetails}>{"Edit Details"}</Text>
             </View>
           )}
         )}
@@ -76,6 +78,17 @@ const styles = {
     marginTop: 9,
     marginLeft: 9,
     marginBottom: 12,
+  },
+  choreStyle: {
+    color: '#A1A1A5',
+    fontSize: 15,
+    padding: 5,
+  },
+  noteStyle: {
+    color: '#A1A1A5',
+    fontSize: 15,
+    padding: 5,
+    marginLeft: 160,
   }
 }
 

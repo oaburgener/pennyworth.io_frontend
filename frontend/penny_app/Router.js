@@ -14,7 +14,7 @@ const RouterComp = () => {
 
           <Scene key="login" component={Login} hideNavBar initial/>
 
-          <Scene key="signup" component={SignUp} hideNavBar/>
+          <Scene key="signup" component={SignUp} />
 
           <Scene key="services" component={ServicePage} title="Services" />
 

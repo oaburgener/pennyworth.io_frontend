@@ -19,6 +19,7 @@ class Service extends Component {
    return (
      <View>
        {this.props.services.map(ele => {
+
          return(
            <ScrollView>
              <View style={styles.serviceContainer}>
