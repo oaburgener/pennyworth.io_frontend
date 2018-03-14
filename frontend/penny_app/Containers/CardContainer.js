@@ -5,7 +5,7 @@ import { getUserServices } from '../actions/services'
 import Card from '../Components/Card'
 
 const mapStateToProps = state => ({
-  userServices: state.ServiceReducer.userServices,
+  userServices: state.ServiceReducer.userServices.services,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

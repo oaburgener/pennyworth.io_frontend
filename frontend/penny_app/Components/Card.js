@@ -3,15 +3,15 @@ import { View, Text, Image } from 'react-native';
 import Chore from './Chore'
 
 class Card extends Component {
-  componentDidMount(){
+  componentDidMount() {
     this.props.getUserServices()
   }
 
-render () {
+  render () {
     return (
       <View>
-        {console.log(this.props.userServices)}
-        {/* {this.props.userServices.map(ele => { */}
+        {/* {console.log(this.props.userServices)} */}
+        {this.props.userServices && this.props.userServices.map(ele => {
           return(
             <View style={styles.containerStyle}>
               <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
@@ -23,8 +23,8 @@ render () {
               <Chore></Chore>
               <Text style={styles.editDetails}>{"Edit Details"}</Text>
             </View>
-          )
-        {/* })} */}
+          )}
+        )}
       </View>
     )
   }
