@@ -28,7 +28,7 @@ export const getUserServices = () => {
           'Accept': 'application/json',
         },
       })
-      .then(response => console.log(response))
+      .then(response => response.json())
       .then(json => {
         dispatch({
           type: GET_USER_SERVICES,
