@@ -6,6 +6,7 @@ import {
  Text,
  TouchableOpacity,
 } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 
 class Schedule extends Component {
  constructor(props) {
@@ -34,7 +35,7 @@ class Schedule extends Component {
          />
        </View>
        <TouchableOpacity style={styles.submitButtonStyle}>
-         <Text style={styles.submitTextStyles}>Continue</Text>
+         <Text style={styles.submitTextStyles} onPress={() => Actions.services() }>Continue</Text>
        </TouchableOpacity>
      </View>
    )

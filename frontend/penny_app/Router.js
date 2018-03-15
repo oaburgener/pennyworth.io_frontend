@@ -1,5 +1,5 @@
 import React from 'react'
-import { Scene, Router } from 'react-native-router-flux'
+import { Scene, Router, Actions } from 'react-native-router-flux'
 import Login from './Components/Login'
 import ServicePage from './Components/ServicePage'
 import CardContainer from './Containers/CardContainer'
@@ -18,7 +18,9 @@ const RouterComp = () => {
 
           <Scene key="services" component={ServicePage} title="Services" />
 
-          <Scene key="card" component={CardContainer} title="Scheduled" />
+          <Scene key="dateTime" component={Schedule} title="Schedule" />
+
+          <Scene key="card" component={CardContainer} title="Scheduled" leftTitle="Schedule New" onLeft={() => { Actions.dateTime() }}/>
 
       </Scene>
     </Router>

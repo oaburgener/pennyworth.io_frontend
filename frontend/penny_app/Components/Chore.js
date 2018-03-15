@@ -13,7 +13,7 @@ render () {
           return(
             <View style={styles.containerStyle}>
               <Text style={styles.choreStyle}>{service.label}</Text>
-              <Text style={styles.noteStyle}>{"Weekly"}</Text>
+              <Text style={styles.noteStyle}>{service.notes}</Text>
             </View>
           )}
         )}

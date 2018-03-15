@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import ChoreContainer from '../Containers/ChoreContainer'
 
 class Card extends Component {
@@ -10,7 +10,7 @@ class Card extends Component {
   render () {
 
     return (
-      <View>
+      <ScrollView>
         {this.props.userServices && this.props.userServices.map(service => {
           return(
             <View key={service.id} style={styles.containerStyle}>
@@ -20,14 +20,12 @@ class Card extends Component {
                 <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
                 <Text style={styles.pennyworkerStyle}>{"name"}</Text>
               </View>
-                {/* <ChoreContainer /> */}
-                <Text style={styles.choreStyle}>{service.label}</Text>
-                <Text style={styles.noteStyle}>{service.notes}</Text>
+                <ChoreContainer />
                 <Text style={styles.editDetails}>{"Edit Details"}</Text>
             </View>
           )}
         )}
-      </View>
+      </ScrollView>
     )
   }
 }
