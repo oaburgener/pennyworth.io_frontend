@@ -1,34 +1,38 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
-import Chore from './Chore'
+import { View, Text, Image, ScrollView } from 'react-native';
+import ChoreContainer from '../Containers/ChoreContainer'
 
 class Card extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      date: 'Tuesday, March 6',
-      name: 'Nate'
-    }
+  componentDidMount() {
+    this.props.getUserServices()
   }
 
-render () {
+  render () {
+
     return (
-      <View style={styles.containerStyle}>
-        <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
-        <Text style={styles.headerStyle}>{this.state.date}</Text>
-        <View style={styles.pennyworkerContainer}>
-          <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
-          <Text style={styles.pennyworkerStyle}>{this.state.name}</Text>
-        </View>
-        <Chore></Chore>
-        <Text style={styles.editDetails}>{"Edit Details"}</Text>
-      </View>
+      <ScrollView>
+        {this.props.userServices && this.props.userServices.map(service => {
+          return(
+            <View key={service.id} style={styles.containerStyle}>
+              <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
+              <Text style={styles.headerStyle}>{service.date}</Text>
+              <View style={styles.pennyworkerContainer}>
+                <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
+                <Text style={styles.pennyworkerStyle}>{"name"}</Text>
+              </View>
+                <ChoreContainer />
+                <Text style={styles.editDetails}>{"Edit Details"}</Text>
+            </View>
+          )}
+        )}
+      </ScrollView>
     )
   }
 }
 
 const styles = {
   containerStyle: {
+    backgroundColor: 'white',
     height: 'auto',
     borderColor: '#F4F4F4',
     borderWidth: 1,
@@ -72,6 +76,17 @@ const styles = {
     marginTop: 9,
     marginLeft: 9,
     marginBottom: 12,
+  },
+  choreStyle: {
+    color: '#A1A1A5',
+    fontSize: 15,
+    padding: 5,
+  },
+  noteStyle: {
+    color: '#A1A1A5',
+    fontSize: 15,
+    padding: 5,
+    marginLeft: 160,
   }
 }
 

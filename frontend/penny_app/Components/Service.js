@@ -6,30 +6,40 @@ import {
  TouchableOpacity,
  Switch,
  ScrollView,
+ Modal
 } from 'react-native'
+import Note from './Note'
+import NoteModal from './NoteModal'
 
 class Service extends Component {
- constructor(props) {
-   super(props)
-   this.state = {
-     service: '',
-     notes: '',
-   }
- }
+  constructor(props){
+    super(props)
+  }
+
+  componentDidMount(){
+    this.props.getServices()
+  }
 
  render() {
+
    return (
      <View>
-         <View style={styles.serviceContainer}>
-           <Text style={styles.serviceStyle}>{"Tidy-up"}</Text>
-           <Switch style={styles.toggle}
-             onTintColor = '#982D37'
-            />
-          </View>
-          <View style={styles.notesContainer}>
-            <Text style={styles.notes}>{"Notes"}</Text>
-            <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text>
-          </View>
+       {this.props.services.map(ele => {
+
+         return(
+           <ScrollView>
+             <View style={styles.serviceContainer}>
+               <Text style={styles.serviceStyle}>{ele.label}</Text>
+               <Switch style={styles.toggle} onTintColor = '#982D37' />
+              </View>
+              <View style={styles.notesContainer}>
+                <NoteModal serviceId ={ ele.id }></NoteModal>
+                {/* <Text style={styles.notes}>{"Notes"}</Text>
+                <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text> */}
+              </View>
+           </ScrollView>
+          )
+       })}
      </View>
    )
  }
@@ -65,7 +75,8 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   toggle: {
-    marginLeft: 180,
+    position: 'absolute',
+    marginLeft: 275,
   },
    submitButtonStyle: {
      alignSelf: 'stretch',

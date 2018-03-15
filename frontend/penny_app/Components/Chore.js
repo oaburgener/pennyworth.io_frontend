@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 
 class Chore extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      chore: '',
-      notes: ''
-    }
+  componentDidMount() {
+    this.props.getUserServices()
   }
 
 render () {
     return (
-      <View style={styles.containerStyle}>
-        <Text style={styles.choreStyle}>{"Tidy-up"}</Text>
-        <Text style={styles.noteStyle}>{"Weekly"}</Text>
+      <View>
+        {this.props.userServices && this.props.userServices.map(service => {
+          return(
+            <View style={styles.containerStyle}>
+              <Text style={styles.choreStyle}>{service.label}</Text>
+              <Text style={styles.noteStyle}>{service.notes}</Text>
+            </View>
+          )}
+        )}
       </View>
     )
   }

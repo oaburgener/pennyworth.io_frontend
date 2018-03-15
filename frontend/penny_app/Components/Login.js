@@ -69,6 +69,9 @@ class Login extends Component {
         />
         { this.renderError() }
         { this.renderButton()}
+        <TouchableOpacity style={styles.signUpButtonStyle} onPress={() => Actions.signup()}>
+          <Text style={styles.signUpTextStyles}>New User?</Text>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -116,14 +119,6 @@ const styles = {
     paddingTop: 15,
     paddingBottom: 15
   },
-  submitTextStyles: {
-    alignSelf: 'center',
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
-    paddingTop: 15,
-    paddingBottom: 15
-  },
   loginButtonStyle: {
     alignSelf: 'stretch',
     backgroundColor: '#fff',
@@ -134,15 +129,24 @@ const styles = {
     marginRight: 40,
     marginTop: 50
   },
-  submitButtonStyle: {
+  signUpTextStyles: {
+    alignSelf: 'center',
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+    paddingTop: 15,
+    paddingBottom: 15
+  },
+  signUpButtonStyle: {
     alignSelf: 'stretch',
+    width: 300,
     backgroundColor: '#982D37',
     borderRadius: 7,
     borderWidth: 1,
     borderColor: '#982D37',
     marginLeft: 40,
     marginRight: 40,
-    marginTop: 10
+    marginTop: 30
   }
 }
 

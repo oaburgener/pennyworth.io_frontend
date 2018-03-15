@@ -7,23 +7,19 @@ import {
  Switch,
  ScrollView,
 } from 'react-native'
-import Service from './Service'
+import ServiceContainer from '../Containers/ServiceContainer'
+import { Actions } from 'react-native-router-flux'
 
-class ServiceContainer extends Component {
- constructor(props) {
-   super(props)
-   this.state = {
-   }
- }
+class ServicePage extends Component {
 
  render() {
    return (
-     <View>
+     <View style={styles.viewContainer}>
        <ScrollView>
-         <Service></Service>
+         <ServiceContainer />
        </ScrollView>
-       <View>
-         <TouchableOpacity style={styles.submitButtonStyle}>
+       <View style={styles.buttonContainer}>
+         <TouchableOpacity style={styles.submitButtonStyle} onPress={()=> Actions.pennyworker()}>
            <Text style={styles.submitTextStyles}>Update</Text>
          </TouchableOpacity>
        </View>
@@ -33,6 +29,10 @@ class ServiceContainer extends Component {
 }
 
 const styles = StyleSheet.create({
+  viewContainer: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
    submitButtonStyle: {
      alignSelf: 'stretch',
      backgroundColor: '#982D37',
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
      borderColor: '#982D37',
      marginLeft: 40,
      marginRight: 40,
-     marginTop: 400,
+     marginBottom: 20,
    },
    submitTextStyles: {
      alignSelf: 'center',
@@ -51,6 +51,12 @@ const styles = StyleSheet.create({
      paddingTop: 15,
      paddingBottom: 15
    },
+   buttonContainer: {
+     borderTopWidth: 1,
+     borderColor: '#e0e0e0',
+     paddingTop: 20,
+     backgroundColor: '#efefef',
+   },
 })
 
-export default ServiceContainer
+export default ServicePage
