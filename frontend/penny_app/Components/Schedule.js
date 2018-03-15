@@ -7,6 +7,7 @@ import {
  TouchableOpacity,
 } from 'react-native'
 import { Actions } from 'react-native-router-flux'
+import NoteContainer from '../Containers/NoteContainer'
 
 class Schedule extends Component {
  constructor(props) {
@@ -15,6 +16,10 @@ class Schedule extends Component {
      chosenDate: new Date()
    }
    this.setDate = this.setDate.bind(this)
+ }
+
+ componentDidMount() {
+   this.props.getDateTime()
  }
 
  setDate(newDate) {
