@@ -6,10 +6,16 @@ import {
  TouchableOpacity,
  Switch,
  ScrollView,
+ Modal
 } from 'react-native'
 import Note from './Note'
+import NoteModal from './NoteModal'
 
 class Service extends Component {
+  constructor(props){
+    super(props)
+  }
+
   componentDidMount(){
     this.props.getServices()
   }
@@ -27,8 +33,9 @@ class Service extends Component {
                <Switch style={styles.toggle} onTintColor = '#982D37' />
               </View>
               <View style={styles.notesContainer}>
-                <Text style={styles.notes}>{"Notes"}</Text>
-                <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text>
+                <NoteModal serviceId ={ ele.id }></NoteModal>
+                {/* <Text style={styles.notes}>{"Notes"}</Text>
+                <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text> */}
               </View>
            </ScrollView>
           )
