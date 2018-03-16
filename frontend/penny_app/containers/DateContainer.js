@@ -12,9 +12,9 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   getDateTime,
 }, dispatch)
 
-const NoteContainer = connect (
+const DateContainer = connect (
   mapStateToProps,
   mapDispatchToProps
 )(Schedule)
 
-export default NoteContainer
+export default DateContainer

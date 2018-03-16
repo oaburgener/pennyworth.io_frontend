@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
-import ChoreContainer from '../Containers/ChoreContainer'
+import ChoreContainer from '../containers/ChoreContainer'
 
 class Card extends Component {
   componentDidMount() {

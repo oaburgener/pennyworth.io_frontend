@@ -7,7 +7,7 @@ import {
  Switch,
  ScrollView,
 } from 'react-native'
-import ServiceContainer from '../Containers/ServiceContainer'
+import ServiceContainer from '../containers/ServiceContainer'
 import { Actions } from 'react-native-router-flux'
 
 class ServicePage extends Component {

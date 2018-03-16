@@ -2,7 +2,7 @@ import React from 'react'
 import { Scene, Router, Actions } from 'react-native-router-flux'
 import Login from './Components/Login'
 import ServicePage from './Components/ServicePage'
-import CardContainer from './Containers/CardContainer'
+import CardContainer from './containers/CardContainer'
 import SignUp from './Components/SignUp'
 import Schedule from './Components/Schedule'
 
