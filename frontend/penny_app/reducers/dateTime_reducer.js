@@ -1,20 +1,25 @@
 import {
-  GET_DATETIME,
+  UPDATE_DATE_TIME,
 } from '../actions/dateTime'
 
 let initialState = {
-  date: '',
-  time: ''
+  reservation: {
+    date: '',
+    time: '',
+    label: '',
+    notes: '',
+    id: ''
+  }
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_DATETIME:
-    return {
-      ...state,
-      date: action.data.date,
-      time: action.data.time
-    }
+    case UPDATE_DATE_TIME:
+      return {
+        ...state,
+        reservationDate: action.data.date,
+        reservationTime: action.data.time
+      }
     default: return state
   }
 }

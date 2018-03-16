@@ -4,7 +4,7 @@ import Login from './Components/Login'
 import ServicePage from './Components/ServicePage'
 import CardContainer from './Containers/CardContainer'
 import SignUp from './Components/SignUp'
-import Schedule from './Components/Schedule'
+import dateTimeContainer from './Containers/DateTimeContainer'
 
 
 const RouterComp = () => {
@@ -18,7 +18,7 @@ const RouterComp = () => {
 
           <Scene key="services" component={ServicePage} title="Services" />
 
-          <Scene key="dateTime" component={Schedule} title="Schedule" />
+          <Scene key="dateTime" component={dateTimeContainer} title="Schedule" />
 
           <Scene key="card" component={CardContainer} title="Scheduled" leftTitle="Schedule New" onLeft={() => { Actions.dateTime() }}/>
 

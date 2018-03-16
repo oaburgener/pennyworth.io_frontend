@@ -1,14 +1,13 @@
 export const GET_DATETIME = 'GET_DATETIME'
 
-export const getDateTime = (data) => {
+export const getDateTime = (date) => {
 
-  let date = ''
-  let time = ''
+  console.log('date', date);
 
   return async (dispatch) => {
 
     dispatch({
-      type: GET_DATETIME,
+      type: UPDATE_DATE_TIME,
       date: date,
       time: time,
     })

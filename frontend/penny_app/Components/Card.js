@@ -21,7 +21,7 @@ class Card extends Component {
                 <Text style={styles.pennyworkerStyle}>{"name"}</Text>
               </View>
                 <ChoreContainer />
-                <Text style={styles.editDetails}>{"Edit Details"}</Text>
+                {/* <Text style={styles.editDetails}>{"Edit Details"}</Text> */}
             </View>
           )}
         )}
@@ -77,17 +77,6 @@ const styles = {
     marginLeft: 9,
     marginBottom: 12,
   },
-  choreStyle: {
-    color: '#A1A1A5',
-    fontSize: 15,
-    padding: 5,
-  },
-  noteStyle: {
-    color: '#A1A1A5',
-    fontSize: 15,
-    padding: 5,
-    marginLeft: 160,
-  }
 }
 
 export default Card

@@ -5,16 +5,16 @@ import { getDateTime } from '../actions/dateTime'
 import Schedule from '../Components/Schedule'
 
 const mapStateToProps = state => ({
-  dateTime: state.dateTime.dateTime,
+  dateTime: state.DateTimeReducer,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getDateTime,
 }, dispatch)
 
-const NoteContainer = connect (
+const dateTimeContainer = connect (
   mapStateToProps,
   mapDispatchToProps
 )(Schedule)
 
-export default NoteContainer
+export default dateTimeContainer
