@@ -9,7 +9,7 @@ import {
  Modal
 } from 'react-native'
 import Note from './Note'
-import NoteModal from './NoteModal'
+import NoteContainer from '../Containers/NoteContainer'
 
 class Service extends Component {
   constructor(props){
@@ -33,7 +33,7 @@ class Service extends Component {
                <Switch style={styles.toggle} onTintColor = '#982D37' />
               </View>
               <View style={styles.notesContainer}>
-                <NoteModal serviceId ={ ele.id }></NoteModal>
+                <NoteContainer serviceId ={ ele.id }></NoteContainer>
                 {/* <Text style={styles.notes}>{"Notes"}</Text>
                 <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text> */}
               </View>
