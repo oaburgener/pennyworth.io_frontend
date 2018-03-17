@@ -1,18 +1,15 @@
 import {
   UPDATE_DATE_TIME,
   UPDATE_SERVICE_ID,
-  UPDATE_NOTES
+  UPDATE_NOTES,
+  GET_USER_ID
 } from '../actions/dateTime'
 
 let initialState = {
-  reservation: {
     date: '',
-    time: '',
-    label: '',
     notes: '',
     user_id: 0,
-    service_id: 0
-  }
+    service_id: 1
 }
 
 export default (state = initialState, action) => {
@@ -20,17 +17,22 @@ export default (state = initialState, action) => {
     case UPDATE_DATE_TIME:
       return {
         ...state,
-        reservationDate: action.data.date,
+        date: action.date,
       }
     case UPDATE_SERVICE_ID:
       return {
         ...state,
-        reservationServiceId: action.data.service_id
+        service_id: state.service_id
       }
     case UPDATE_NOTES:
       return {
         ...state,
-        reservationNotes: action.data.notes
+        notes: action.notes
+      }
+    case GET_USER_ID:
+      return {
+        ...state,
+        user_id: action.user_id
       }
     default: return state
   }

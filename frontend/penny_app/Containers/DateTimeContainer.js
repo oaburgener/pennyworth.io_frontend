@@ -5,7 +5,7 @@ import { getDateTime } from '../actions/dateTime'
 import Schedule from '../Components/Schedule'
 
 const mapStateToProps = state => ({
-  dateTime: state.NewServicesReducer.reservationDate,
+  date: state.NewServicesReducer.date,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

@@ -15,11 +15,19 @@ class NoteModal extends Component {
   }
 
   componentDidMount() {
-    this.props.getServiceId(this.props.serviceId)
+    this.props.getUserId()
   }
 
   setNotes() {
     this.props.getNotes(this.state.notes)
+    this.props.getServiceId(this.props.serviceId)
+    this.setModalVisible(!this.state.modalVisible)
+    this.props.postService({
+      date: this.props.date,
+      notes: this.state.notes,
+      user_id: this.props.user_id,
+      service_id: this.props.service_id,
+    })
   }
 
   render() {
@@ -37,17 +45,15 @@ class NoteModal extends Component {
             <View>
               <TextInput
                 style={textInputStyle}
-                {...this.props} 
+                {...this.props}
                 multiline = {true}
                 editable = {true}
                 maxLength = {300}
                 onChangeText={(notes) => this.setState({notes})}
               />
               <TouchableOpacity style={styles.saveButtonStyle}
-
                 onPress={() => {
                   this.setNotes()
-                  this.setModalVisible(!this.state.modalVisible)
                 }}>
                 <Text style={styles.saveTextStyle}>Save Notes</Text>
               </TouchableOpacity>

@@ -24,18 +24,16 @@ class Service extends Component {
 
    return (
      <View>
-       {this.props.services.map(ele => {
+       {this.props.services.map(service => {
 
          return(
            <ScrollView>
              <View style={styles.serviceContainer}>
-               <Text style={styles.serviceStyle}>{ele.label}</Text>
+               <Text style={styles.serviceStyle}>{service.label}</Text>
                <Switch style={styles.toggle} onTintColor = '#982D37' />
               </View>
               <View style={styles.notesContainer}>
-                <NoteContainer serviceId ={ ele.id }></NoteContainer>
-                {/* <Text style={styles.notes}>{"Notes"}</Text>
-                <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text> */}
+                <NoteContainer serviceId ={ service.id }></NoteContainer>
               </View>
            </ScrollView>
           )

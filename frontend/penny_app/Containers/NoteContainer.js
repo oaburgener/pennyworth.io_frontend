@@ -1,17 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { getServiceId, getNotes } from '../actions/dateTime'
+import { getServiceId, getNotes, getUserId, postService } from '../actions/dateTime'
 import NoteModal from '../Components/NoteModal'
 
 const mapStateToProps = state => ({
-  service_id: state.NewServicesReducer.reservationServiceId,
-  notes: state.NewServicesReducer.reservationNotes
+  service_id: state.NewServicesReducer.service_id,
+  notes: state.NewServicesReducer.notes,
+  user_id: state.NewServicesReducer.user_id,
+  date: state.NewServicesReducer.date
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getServiceId,
-  getNotes
+  getNotes,
+  getUserId,
+  postService
 }, dispatch)
 
 const NoteContainer = connect (

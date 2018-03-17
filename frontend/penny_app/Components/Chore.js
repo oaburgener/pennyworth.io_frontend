@@ -23,9 +23,6 @@ render () {
 }
 
 const styles = {
-  containerStyle: {
-    // flexDirection: 'row',
-  },
   choreStyle: {
     color: '#A1A1A5',
     fontSize: 15,
