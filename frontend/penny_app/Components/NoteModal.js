@@ -70,9 +70,6 @@ class NoteModal extends Component {
   }
 }
 const styles = {
-  // viewContainer: {
-  //   marginTop: 40,
-  // },
   textStyle:{
     color:'#982D37'
   },
