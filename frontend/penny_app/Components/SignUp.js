@@ -30,7 +30,7 @@ class SignUp extends Component {
 
   onButtonPress() {
     const { first_name, last_name, email, password, address } = this.props
-    
+
     this.props.signUpUser({ first_name, last_name, email, password, address })
   }
 
@@ -48,9 +48,11 @@ class SignUp extends Component {
 
   renderButton() {
     return (
+      <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.signUpButtonStyle} onPress={ this.onButtonPress.bind(this)}>
         <Text style={styles.signUpTextStyles}>Sign Up</Text>
       </TouchableOpacity>
+    </View>
     )
   }
 
@@ -96,7 +98,7 @@ class SignUp extends Component {
           onChangeText={ this.onEmailChange.bind(this) }
           value={ this.props.email}/>
 
-        <Text style={passwordTextStyles}>Password</Text>
+        <Text style={emailTextStyles}>Password</Text>
         <TextInput style={textInputStyles}
           secureTextEntry
           placeholder='password'
@@ -116,8 +118,6 @@ const styles = {
   viewStyles: {
     flex: 1,
     backgroundColor:'white',
-    justifyContent: 'center',
-    alignItems: 'center'
   },
   textInputStyles: {
     height: 60,
@@ -128,11 +128,12 @@ const styles = {
     paddingLeft: 10,
     borderRadius: 5,
     borderWidth: 1.5,
-    borderColor: '#982D37'
+    borderColor: '#982D37',
+    alignItems: 'center'
   },
   emailTextStyles: {
     alignSelf: 'flex-start',
-    marginTop: 30,
+    marginTop: 15,
     marginLeft: 40,
     color: '#982D37',
     fontSize: 16,
@@ -140,7 +141,7 @@ const styles = {
   },
   passwordTextStyles: {
     alignSelf: 'flex-start',
-    marginTop: 30,
+    marginTop: 15,
     marginLeft: 40,
     color: '#982D37',
     fontSize: 16,
@@ -162,8 +163,17 @@ const styles = {
     borderColor: '#982D37',
     marginLeft: 40,
     marginRight: 40,
+    marginBottom: 20,
+  },
+  buttonContainer: {
+    borderTopWidth: 1,
+    borderColor: '#e0e0e0',
+    paddingTop: 20,
+    backgroundColor: '#efefef',
+    justifyContent: 'flex-end',
+    marginBottom: 10,
     marginTop: 30
-  }
+  },
 }
 
 const mapStateToProps = ({ auth }) => {

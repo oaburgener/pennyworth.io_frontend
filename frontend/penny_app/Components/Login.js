@@ -49,7 +49,7 @@ class Login extends Component {
 
     return (
       <View style={viewStyles}>
-        <Image style={{width: '75%', height: 100, resizeMode: 'center', marginTop:25}} source={require('../assets/pw_logo.png')}/>
+        <Image style={{width: '75%', height: 100, resizeMode: 'center', marginTop: 10}} source={require('../assets/pw_logo.png')}/>
         <Text style={emailTextStyles}>Email</Text>
         <TextInput
           style={textInputStyles}
