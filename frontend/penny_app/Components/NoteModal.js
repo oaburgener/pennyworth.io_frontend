@@ -20,7 +20,6 @@ class NoteModal extends Component {
 
   setNotes() {
     this.props.getNotes(this.state.notes)
-    this.setModalVisible(!this.state.modalVisible)
   }
 
   render() {
@@ -38,7 +37,7 @@ class NoteModal extends Component {
             <View>
               <TextInput
                 style={textInputStyle}
-                {...this.props} // Inherit any props passed to it; e.g., multiline, numberOfLines below
+                {...this.props} 
                 multiline = {true}
                 editable = {true}
                 maxLength = {300}
@@ -46,8 +45,10 @@ class NoteModal extends Component {
               />
               <TouchableOpacity style={styles.saveButtonStyle}
 
-                onPress={this.setNotes()}
-                >
+                onPress={() => {
+                  this.setNotes()
+                  this.setModalVisible(!this.state.modalVisible)
+                }}>
                 <Text style={styles.saveTextStyle}>Save Notes</Text>
               </TouchableOpacity>
             </View>
