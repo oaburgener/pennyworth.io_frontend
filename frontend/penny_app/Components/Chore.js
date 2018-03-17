@@ -23,19 +23,17 @@ render () {
 }
 
 const styles = {
-  containerStyle: {
-    flexDirection: 'row',
-  },
   choreStyle: {
     color: '#A1A1A5',
     fontSize: 15,
     padding: 5,
+    marginTop: 10,
   },
   noteStyle: {
     color: '#A1A1A5',
     fontSize: 15,
     padding: 5,
-    marginLeft: 160,
+    marginLeft: 50,
   },
 }
 

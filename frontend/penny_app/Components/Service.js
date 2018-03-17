@@ -9,7 +9,7 @@ import {
  Modal
 } from 'react-native'
 import Note from './Note'
-import NoteModal from './NoteModal'
+import NoteContainer from '../Containers/NoteContainer'
 
 class Service extends Component {
   constructor(props){
@@ -24,18 +24,16 @@ class Service extends Component {
 
    return (
      <View>
-       {this.props.services.map(ele => {
+       {this.props.services.map(service => {
 
          return(
            <ScrollView>
              <View style={styles.serviceContainer}>
-               <Text style={styles.serviceStyle}>{ele.label}</Text>
+               <Text style={styles.serviceStyle}>{service.label}</Text>
                <Switch style={styles.toggle} onTintColor = '#982D37' />
               </View>
               <View style={styles.notesContainer}>
-                <NoteModal serviceId ={ ele.id }></NoteModal>
-                {/* <Text style={styles.notes}>{"Notes"}</Text>
-                <Text style={styles.notesText}>{"Dust living room, check plants, clean mirror, sort mail"}</Text> */}
+                <NoteContainer serviceId ={ service.id }></NoteContainer>
               </View>
            </ScrollView>
           )
