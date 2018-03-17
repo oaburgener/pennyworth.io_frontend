@@ -19,7 +19,7 @@ class ServicePage extends Component {
          <ServiceContainer />
        </ScrollView>
        <View style={styles.buttonContainer}>
-         <TouchableOpacity style={styles.submitButtonStyle} onPress={()=> Actions.pennyworker()}>
+         <TouchableOpacity style={styles.submitButtonStyle} onPress={()=> Actions.card()}>
            <Text style={styles.submitTextStyles}>Update</Text>
          </TouchableOpacity>
        </View>
