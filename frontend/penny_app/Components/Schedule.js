@@ -31,35 +31,38 @@ class Schedule extends Component {
 
  render() {
    return (
-     <View>
+     <View style={styles.viewContainer}>
        <Text style={styles.headerStyle}>{"Schedule"}</Text>
        <Text style={styles.paragraphStyle}>{"Select day of week and time slot."}</Text>
-       <View style={styles.container}>
+       <View>
          <DatePickerIOS
            date={this.state.chosenDate}
            onDateChange={this.setDate}
          />
        </View>
-       <TouchableOpacity style={styles.submitButtonStyle} onPress={this.sendDate.bind(this)}>
-         <Text style={styles.submitTextStyles}>Continue</Text>
-       </TouchableOpacity>
+       <View style={styles.buttonContainer}>
+         <TouchableOpacity style={styles.submitButtonStyle} onPress={this.sendDate.bind(this)}>
+           <Text style={styles.submitTextStyles}>Continue</Text>
+         </TouchableOpacity>
+       </View>
      </View>
    )
  }
 }
 
 const styles = StyleSheet.create({
- container: {
-   flex: 1,
-   justifyContent: 'center'
- },
+viewContainer: {
+  backgroundColor: 'white',
+  flex: 1,
+},
  headerStyle: {
    color: 'black',
    fontSize: 32,
    fontWeight: 'bold',
-   paddingTop: 70,
    paddingLeft: 40,
    paddingBottom: 20,
+   justifyContent: 'center',
+   marginTop: 40,
  },
  paragraphStyle: {
    color: 'black',
@@ -67,6 +70,7 @@ const styles = StyleSheet.create({
    fontWeight: 'bold',
    paddingLeft: 40,
    paddingBottom: 70,
+   justifyContent: 'center',
  },
  submitButtonStyle: {
    alignSelf: 'stretch',
@@ -76,7 +80,7 @@ const styles = StyleSheet.create({
    borderColor: '#982D37',
    marginLeft: 40,
    marginRight: 40,
-   marginTop: 350,
+   marginBottom: 20,
  },
  submitTextStyles: {
    alignSelf: 'center',
@@ -85,6 +89,15 @@ const styles = StyleSheet.create({
    fontWeight: '600',
    paddingTop: 15,
    paddingBottom: 15
+ },
+ buttonContainer: {
+   borderTopWidth: 1,
+   borderColor: '#e0e0e0',
+   paddingTop: 20,
+   backgroundColor: '#efefef',
+   justifyContent: 'flex-end',
+   marginBottom: 10,
+   marginTop: 100
  },
 })
 
