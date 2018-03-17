@@ -33,15 +33,13 @@ class NoteModal extends Component {
   render() {
     const { textStyle, textInputStyle, saveButtonStyle, saveTextStyle } = styles
     return (
-      <View style={{marginTop: 22}}>
+      <View>
         <Modal
-          animationType="fade"
+          animationType="slide"
           transparent={false}
           visible={this.state.modalVisible}
-          onRequestClose={() => {
-            alert('Modal has been closed.');
-          }}>
-          <View style={{marginTop: 22}}>
+          >
+          <View>
             <View>
               <TextInput
                 style={textInputStyle}
@@ -63,7 +61,7 @@ class NoteModal extends Component {
 
         <TouchableHighlight
           onPress={() => {
-            this.setModalVisible(true);
+            this.setModalVisible(true)
           }}>
           <Text style={textStyle}>Click Here To Makes Notes</Text>
         </TouchableHighlight>
@@ -72,16 +70,19 @@ class NoteModal extends Component {
   }
 }
 const styles = {
+  // viewContainer: {
+  //   marginTop: 40,
+  // },
   textStyle:{
     color:'#982D37'
   },
   textInputStyle:{
     borderWidth: 1,
-    borderColor:'black',
-    marginLeft: 20,
-    marginRight:20,
-    marginTop: 10,
-    minHeight:200
+    borderColor: '#e0e0e0',
+    marginLeft: 40,
+    marginRight: 40,
+    marginTop: 100,
+    minHeight: 300
   },
   saveButtonStyle:{
     alignSelf: 'stretch',
