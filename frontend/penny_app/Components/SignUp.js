@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, TextInput, Text, TouchableOpacity, Image, secureTextEntry,autoCorrect, autoCapitalize} from 'react-native'
 import { connect } from 'react-redux'
 import { firstNameChanged, lastNameChanged, addressChanged, emailChanged, passwordChanged, loginUser, signUpUser } from '../actions/auth'
-
+import { Actions } from 'react-native-router-flux'
 
 class SignUp extends Component {
   constructor(props) {
@@ -32,6 +32,8 @@ class SignUp extends Component {
     const { first_name, last_name, email, password, address } = this.props
 
     this.props.signUpUser({ first_name, last_name, email, password, address })
+
+    Actions.dateTime()
   }
 
   renderError() {
