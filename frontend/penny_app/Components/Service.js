@@ -8,32 +8,45 @@ import {
  ScrollView,
  Modal
 } from 'react-native'
-import Note from './Note'
 import NoteContainer from '../Containers/NoteContainer'
 
 class Service extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
+    this.state = {
+      1: false,
+      2: false,
+      3: false,
+      4: false,
+      5: false,
+   }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.getServices()
+  }
+
+  toggleSwitch = (id) => {
+    this.setState({[id]: !this.state[id]})
   }
 
  render() {
 
    return (
      <View>
-       {this.props.services.map(service => {
+       {this.props.services.map((service, index) => {
 
          return(
            <ScrollView>
              <View style={styles.serviceContainer}>
                <Text style={styles.serviceStyle}>{service.label}</Text>
-               <Switch style={styles.toggle} onTintColor = '#982D37' />
+               <Switch style={styles.toggle}
+                 onTintColor='#982D37'
+                 onValueChange={() => this.toggleSwitch(service.id)}
+                 value={this.state[service.id]}/>
               </View>
               <View style={styles.notesContainer}>
-                <NoteContainer serviceId ={ service.id }></NoteContainer>
+                <NoteContainer serviceId={ service.id }></NoteContainer>
               </View>
            </ScrollView>
           )
