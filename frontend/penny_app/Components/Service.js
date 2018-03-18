@@ -28,13 +28,23 @@ class Service extends Component {
 
   toggleSwitch = (id) => {
     this.setState({[id]: !this.state[id]})
+   }
+
+  renderNotes (id) {
+    if (this.state[id]) {
+      return (
+        <View style={styles.notesContainer}>
+          <NoteContainer serviceId={ this.state[id] }></NoteContainer>
+        </View>
+      )
+    }
   }
 
  render() {
 
    return (
      <View>
-       {this.props.services.map((service, index) => {
+       {this.props.services.map(service => {
 
          return(
            <ScrollView>
@@ -45,9 +55,7 @@ class Service extends Component {
                  onValueChange={() => this.toggleSwitch(service.id)}
                  value={this.state[service.id]}/>
               </View>
-              <View style={styles.notesContainer}>
-                <NoteContainer serviceId={ service.id }></NoteContainer>
-              </View>
+              {this.renderNotes(service.id)}
            </ScrollView>
           )
        })}

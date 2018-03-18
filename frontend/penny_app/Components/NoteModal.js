@@ -16,6 +16,7 @@ class NoteModal extends Component {
 
   componentDidMount() {
     this.props.getUserId()
+    this.setModalVisible(true)
   }
 
   setNotes() {
@@ -58,15 +59,8 @@ class NoteModal extends Component {
             </View>
           </View>
         </Modal>
-
-        <TouchableHighlight
-          onPress={() => {
-            this.setModalVisible(true)
-          }}>
-          <Text style={textStyle}>Click Here To Makes Notes</Text>
-        </TouchableHighlight>
       </View>
-    );
+    )
   }
 }
 const styles = {
@@ -74,6 +68,7 @@ const styles = {
     color:'#982D37'
   },
   textInputStyle:{
+    padding: 10,
     borderWidth: 1,
     borderColor: '#e0e0e0',
     marginLeft: 40,
