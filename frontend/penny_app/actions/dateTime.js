@@ -4,6 +4,7 @@ export const UPDATE_DATE_TIME = 'UPDATE_DATE_TIME'
 export const UPDATE_SERVICE_ID = 'UPDATE_SERVICE_ID'
 export const UPDATE_NOTES = 'UPDATE_NOTES'
 export const GET_USER_ID = 'GET_USER_ID'
+export const POST_SERVICE = 'POST_SERVICE'
 
 export const getDateTime = (date) => {
 
@@ -54,23 +55,19 @@ export const getUserId = () => {
 
 
 export const postService = (body) => {
-  let newBody = JSON.stringify(body)
-
-  console.log(newBody);
 
   return async (dispatch) => {
-    const response = await fetch('http://localhost:3001/users_services/',{
+    await fetch('http://localhost:3001/users_services/',{
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json',
         'Accept': 'application/json'
       },
-      body: newBody
+      body: JSON.stringify(body)
     })
 
-    //   dispatch({
-    //    type: POST_SERVICE,
-    //    data: true
-    // })
+    dispatch({
+     type: POST_SERVICE,
+    })
   }
 }

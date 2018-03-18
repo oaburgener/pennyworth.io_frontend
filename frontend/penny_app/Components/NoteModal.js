@@ -43,7 +43,8 @@ class NoteModal extends Component {
           <View>
             <View>
               <TextInput
-                style={textInputStyle}
+                style={styles.textInputStyle}
+                placeholder='Jot down any notes for your Pennyworker here.'
                 {...this.props}
                 multiline = {true}
                 editable = {true}
@@ -64,11 +65,12 @@ class NoteModal extends Component {
   }
 }
 const styles = {
-  textStyle:{
+  textStyle: {
     color:'#982D37'
   },
   textInputStyle:{
-    padding: 10,
+    fontSize: 20,
+    padding: 15,
     borderWidth: 1,
     borderColor: '#e0e0e0',
     marginLeft: 40,
@@ -76,7 +78,7 @@ const styles = {
     marginTop: 100,
     minHeight: 300
   },
-  saveButtonStyle:{
+  saveButtonStyle: {
     alignSelf: 'stretch',
     backgroundColor: '#982D37',
     borderRadius: 7,
