@@ -12,19 +12,22 @@ class Card extends Component {
     let hour = 0
     let final = ''
     numDate = parseInt(date.slice(11, 14))
+
     if (numDate > 12) {
       hour = (parseInt(date.slice(11, 14))) - 12
       final = `${hour}:${date.slice(14,16)}pm`
-    } else if (numDate == 12) {
+    } else
+    if (numDate == 12) {
       hour = date.slice(12, 14)
       final = `${hour}${date.slice(14,16)}pm`
     } else {
       hour = date.slice(11, 14)
       final = `${hour}${date.slice(14,16)}am`
     }
+
     for (var i = 0; i < month.length; i++) {
       if (date.slice(5, 7) == i) {
-      return `${month[i -1]}, ${date.slice(8, 10)} at ${final}`
+      return `${month[i - 1]}, ${date.slice(8, 10)} at ${final}`
       }
     }
   }
