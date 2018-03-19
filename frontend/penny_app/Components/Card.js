@@ -3,6 +3,7 @@ import { View, Text, Image, ScrollView } from 'react-native';
 import ChoreContainer from '../Containers/ChoreContainer'
 
 class Card extends Component {
+
   componentDidMount() {
     this.props.getUserServices()
   }
@@ -32,28 +33,49 @@ class Card extends Component {
     }
   }
 
-  render () {
+  groupByDate(serviceData) {
+    let returnedData = {}
 
+    for (let i = 0; i < serviceData.length; i++) {
+      if (returnedData.hasOwnProperty(serviceData[i].date.slice(0, 10))) {
+        returnedData[serviceData[i].date.slice(0, 10)].push(serviceData[i])
+      } else {
+        returnedData[serviceData[i].date.slice(0, 10)] = [serviceData[i]]
+      }
+    }
+
+    return returnedData
+  }
+
+  renderCards() {
+    var cards = []
+
+    for (key in this.groupByDate(this.props.userServices)) {
+      cards.push(
+        (<View style={styles.containerStyle}>
+          <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
+          {/* <Text style={styles.headerStyle}>{this.formatDate(service.date)}</Text> */}
+          <View style={styles.pennyworkerContainer}>
+            <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
+            <Text style={styles.pennyworkerStyle}>{"Nate"}</Text>
+          </View>
+            <ChoreContainer />
+            {/* <Text style={styles.editDetails}>{"Edit Details"}</Text> */}
+        </View>)
+      )
+    }
+    return cards
+  }
+
+
+  render () {
     return (
       <ScrollView>
-        {this.props.userServices && this.props.userServices.map(service => {
-
-          return(
-            <View key={service.id} style={styles.containerStyle}>
-              <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
-              <Text style={styles.headerStyle}>{this.formatDate(service.date)}</Text>
-              <View style={styles.pennyworkerContainer}>
-                <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
-                <Text style={styles.pennyworkerStyle}>{"name"}</Text>
-              </View>
-                <ChoreContainer />
-                {/* <Text style={styles.editDetails}>{"Edit Details"}</Text> */}
-            </View>
-          )}
-        )}
+        {this.props.userServices && this.renderCards()}
       </ScrollView>
     )
   }
+  
 }
 
 const styles = {
