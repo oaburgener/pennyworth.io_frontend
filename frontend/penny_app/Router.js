@@ -4,6 +4,7 @@ import Login from './Components/Login'
 import ServicePage from './Components/ServicePage'
 import CardContainer from './Containers/CardContainer'
 import SignUp from './Components/SignUp'
+import Messaging from './Components/Messaging'
 import dateTimeContainer from './Containers/DateTimeContainer'
 
 const RouterComp = () => {
