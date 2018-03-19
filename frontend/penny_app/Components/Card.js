@@ -37,10 +37,10 @@ class Card extends Component {
     let returnedData = {}
 
     for (let i = 0; i < serviceData.length; i++) {
-      if (returnedData.hasOwnProperty(serviceData[i].date.slice(0, 10))) {
-        returnedData[serviceData[i].date.slice(0, 10)].push(serviceData[i])
+      if (returnedData.hasOwnProperty(serviceData[i].date)) {
+        returnedData[serviceData[i].date].push(serviceData[i])
       } else {
-        returnedData[serviceData[i].date.slice(0, 10)] = [serviceData[i]]
+        returnedData[serviceData[i].date] = [serviceData[i]]
       }
     }
 
@@ -49,18 +49,18 @@ class Card extends Component {
 
   renderCards() {
     var cards = []
+    var data = this.groupByDate(this.props.userServices)
 
-    for (key in this.groupByDate(this.props.userServices)) {
+    for (key in data) {
       cards.push(
         (<View style={styles.containerStyle}>
           <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
-          {/* <Text style={styles.headerStyle}>{this.formatDate(service.date)}</Text> */}
+          <Text style={styles.headerStyle}>{this.formatDate(key)}</Text>
           <View style={styles.pennyworkerContainer}>
             <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
             <Text style={styles.pennyworkerStyle}>{"Nate"}</Text>
           </View>
-            <ChoreContainer />
-            {/* <Text style={styles.editDetails}>{"Edit Details"}</Text> */}
+            <ChoreContainer chores={data[key]}/>
         </View>)
       )
     }
@@ -75,7 +75,7 @@ class Card extends Component {
       </ScrollView>
     )
   }
-  
+
 }
 
 const styles = {

@@ -9,11 +9,11 @@ class Chore extends Component {
 render () {
     return (
       <View>
-        {this.props.userServices && this.props.userServices.map(service => {
+        {this.props.userServices && this.props.chores.map(chore => {
           return(
             <View style={styles.containerStyle}>
-              <Text style={styles.choreStyle}>{service.label}</Text>
-              <Text style={styles.noteStyle}>{service.notes}</Text>
+              <Text style={styles.choreStyle}>{chore.label}</Text>
+              <Text style={styles.noteStyle}>{chore.notes}</Text>
             </View>
           )}
         )}
