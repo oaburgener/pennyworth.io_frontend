@@ -2,7 +2,8 @@ import {
   UPDATE_DATE_TIME,
   UPDATE_SERVICE_ID,
   UPDATE_NOTES,
-  GET_USER_ID
+  GET_USER_ID,
+  POST_SERVICE,
 } from '../actions/dateTime'
 
 let initialState = {
@@ -34,6 +35,12 @@ export default (state = initialState, action) => {
         ...state,
         user_id: action.user_id
       }
+      case POST_SERVICE:
+        return {
+          ...state,
+          loading: true,
+          error: ''
+        }
     default: return state
   }
 }
