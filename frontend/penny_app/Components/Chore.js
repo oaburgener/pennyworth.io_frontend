@@ -27,12 +27,12 @@ const styles = {
     color: '#A1A1A5',
     fontSize: 15,
     padding: 5,
-    marginTop: 10,
+    fontWeight: 'bold',
   },
   noteStyle: {
     color: '#A1A1A5',
     fontSize: 15,
-    padding: 5,
+    padding: 10,
     marginLeft: 50,
   },
 }

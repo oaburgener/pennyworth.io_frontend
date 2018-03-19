@@ -7,11 +7,24 @@ class Card extends Component {
     this.props.getUserServices()
   }
 
-  formatMonth(date) {
+  formatDate(date) {
     let month = ['Jan.', 'Feb.', 'March', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.']
+    let hour = 0
+    let final = ''
+    numDate = parseInt(date.slice(11, 14))
+    if (numDate > 12) {
+      hour = (parseInt(date.slice(11, 14))) - 12
+      final = `${hour}:${date.slice(14,16)}pm`
+    } else if (numDate == 12) {
+      hour = date.slice(12, 14)
+      final = `${hour}${date.slice(14,16)}pm`
+    } else {
+      hour = date.slice(11, 14)
+      final = `${hour}${date.slice(14,16)}am`
+    }
     for (var i = 0; i < month.length; i++) {
       if (date.slice(5, 7) == i) {
-      return `${month[i -1]}, ${date.slice(8, 10)}`
+      return `${month[i -1]}, ${date.slice(8, 10)} at ${final}`
       }
     }
   }
@@ -25,7 +38,7 @@ class Card extends Component {
           return(
             <View key={service.id} style={styles.containerStyle}>
               <Text style={styles.paragraphStyle}>{"Upcoming"}</Text>
-              <Text style={styles.headerStyle}>{this.formatMonth(service.date)}</Text>
+              <Text style={styles.headerStyle}>{this.formatDate(service.date)}</Text>
               <View style={styles.pennyworkerContainer}>
                 <Image style={styles.pennyworkerImage} source={require('../assets/nate.jpg')} />
                 <Text style={styles.pennyworkerStyle}>{"name"}</Text>
