@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import React, { Component } from 'react'
+import { View, Text, Image, ScrollView } from 'react-native'
 import ChoreContainer from '../Containers/ChoreContainer'
+import Messaging from './Messaging'
 
 class Card extends Component {
 
@@ -72,6 +73,7 @@ class Card extends Component {
     return (
       <ScrollView>
         {this.props.userServices && this.renderCards()}
+        <Messaging />
       </ScrollView>
     )
   }

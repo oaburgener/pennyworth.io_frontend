@@ -34,7 +34,7 @@ class Service extends Component {
     if (this.state[id]) {
       return (
         <View style={styles.notesContainer}>
-          <NoteContainer serviceId={ this.state[id] }></NoteContainer>
+          <NoteContainer serviceId={ id }></NoteContainer>
         </View>
       )
     }

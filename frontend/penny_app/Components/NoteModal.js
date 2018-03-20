@@ -27,7 +27,7 @@ class NoteModal extends Component {
       date: this.props.date,
       notes: this.state.notes,
       user_id: this.props.user_id,
-      service_id: this.props.service_id,
+      service_id: this.props.serviceId,
     })
   }
 
