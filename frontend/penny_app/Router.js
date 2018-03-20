@@ -4,7 +4,7 @@ import Login from './Components/Login'
 import ServicePage from './Components/ServicePage'
 import CardContainer from './Containers/CardContainer'
 import SignUp from './Components/SignUp'
-import Messaging from './Components/Messaging'
+import Payment from './Components/Payment'
 import dateTimeContainer from './Containers/DateTimeContainer'
 import dollarSign from './assets/dolladollabillyall.png';
 import bowTie from './assets/bowtie.png'
@@ -22,13 +22,16 @@ const RouterComp = () => {
 
           <Scene key="dateTime" component={dateTimeContainer} title="Time Slot" />
 
+          <Scene key='payment' component={Payment} title='Payment' />
+
           <Scene key="card" component={CardContainer} title="Scheduled"
             leftButtonImage={bowTie}
-            leftButtonStyle={{ marginLeft: 5 }} 
+            leftButtonStyle={{ marginLeft: 5 }}
             onLeft={() => { Actions.dateTime() }}
+
             rightButtonImage={dollarSign}
             rightButtonStyle={{ marginRight: -185 }}
-            onRight={() => { Actions.dateTime() }}/>
+            onRight={() => { Actions.payment() }}/>
 
       </Scene>
     </Router>
