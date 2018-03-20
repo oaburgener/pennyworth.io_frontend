@@ -20,7 +20,7 @@ const RouterComp = () => {
 
           <Scene key="dateTime" component={dateTimeContainer} title="Time Slot" />
 
-          <Scene key="card" component={CardContainer} title="Scheduled" leftTitle="Schedule New" onLeft={() => { Actions.dateTime() }}/>
+          <Scene key="card" component={CardContainer} title="Scheduled" leftTitle="Schedule New" onLeft={() => { Actions.dateTime() rightButtonImage= }}/>
 
       </Scene>
     </Router>
