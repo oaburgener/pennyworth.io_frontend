@@ -2,23 +2,17 @@ import React, { Component } from 'react'
 import { View } from 'react-native'
 import LiveChat from 'react-native-livechat'
 
-
 class Messaging extends Component {
-  constructor(props){
-    super(props)
-  }
 
  render() {
 
    return (
-     <View>
+     <View style={{position:'absolute', marginTop: 500, marginLeft: 250}} >
        <LiveChat bubbleColor="#982D37" bubbleLeft={0} bubbleTop={0} license={9599860} />
      </View>
    )
  }
 
-
 }
-
 
 export default Messaging

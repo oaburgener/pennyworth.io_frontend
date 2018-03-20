@@ -30,11 +30,11 @@ class Service extends Component {
     this.setState({[id]: !this.state[id]})
    }
 
-  renderNotes (id) {
+  renderNotes (id, label) {
     if (this.state[id]) {
       return (
         <View style={styles.notesContainer}>
-          <NoteContainer serviceId={ this.state[id] }></NoteContainer>
+          <NoteContainer serviceId={ id } serviceLabel={ label }></NoteContainer>
         </View>
       )
     }
@@ -55,7 +55,7 @@ class Service extends Component {
                  onValueChange={() => this.toggleSwitch(service.id)}
                  value={this.state[service.id]}/>
               </View>
-              {this.renderNotes(service.id)}
+              {this.renderNotes(service.id, service.label)}
            </ScrollView>
           )
        })}
