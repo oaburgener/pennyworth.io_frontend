@@ -33,6 +33,7 @@ class NoteModal extends Component {
 
   render() {
     const { textStyle, textInputStyle, saveButtonStyle, saveTextStyle } = styles
+
     return (
       <View>
         <Modal
@@ -40,11 +41,13 @@ class NoteModal extends Component {
           transparent={false}
           visible={this.state.modalVisible}
           >
+          <Text style={styles.header}>{`${this.props.serviceLabel} Details`}</Text>
           <View>
             <View>
               <TextInput
                 style={styles.textInputStyle}
                 placeholder='Jot down any notes for your Pennyworker here.'
+                placeholderTextColor='#a2a3a5'
                 {...this.props}
                 multiline = {true}
                 editable = {true}
@@ -68,6 +71,13 @@ const styles = {
   textStyle: {
     color:'#982D37'
   },
+  header: {
+    textAlign: 'center',
+    color: '#5f6063',
+    fontSize: 20,
+    paddingTop: 80,
+    fontWeight: 'bold',
+  },
   textInputStyle:{
     fontSize: 20,
     padding: 15,
@@ -75,8 +85,9 @@ const styles = {
     borderColor: '#e0e0e0',
     marginLeft: 40,
     marginRight: 40,
-    marginTop: 100,
-    minHeight: 300
+    marginTop: 60,
+    minHeight: 300,
+    color:'#5f6063'
   },
   saveButtonStyle: {
     alignSelf: 'stretch',

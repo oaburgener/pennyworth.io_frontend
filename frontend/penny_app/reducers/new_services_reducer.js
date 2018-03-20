@@ -10,7 +10,7 @@ let initialState = {
     date: '',
     notes: '',
     user_id: 0,
-    service_id: 1
+    service_id: 0
 }
 
 export default (state = initialState, action) => {
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
     case UPDATE_SERVICE_ID:
       return {
         ...state,
-        service_id: state.service_id
+        service_id: action.service_id
       }
     case UPDATE_NOTES:
       return {
