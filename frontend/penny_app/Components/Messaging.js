@@ -7,7 +7,7 @@ class Messaging extends Component {
  render() {
 
    return (
-     <View style={{position:'absolute'}} >
+     <View style={{position:'absolute', marginTop: 500, marginLeft: 250}} >
        <LiveChat bubbleColor="#982D37" bubbleLeft={0} bubbleTop={0} license={9599860} />
      </View>
    )
