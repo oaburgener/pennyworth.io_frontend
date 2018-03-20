@@ -13,7 +13,7 @@ class Schedule extends Component {
  constructor(props) {
    super(props)
    this.state = {
-     chosenDate: new Date()
+     chosenDate: new Date(),
    }
    this.setDate = this.setDate.bind(this)
  }
@@ -38,6 +38,7 @@ class Schedule extends Component {
          <DatePickerIOS
            date={this.state.chosenDate}
            onDateChange={this.setDate}
+           timeZoneOffsetInMinutes={(new Date()).getTimezoneOffset()*-1}
          />
        </View>
        <View style={styles.buttonContainer}>
