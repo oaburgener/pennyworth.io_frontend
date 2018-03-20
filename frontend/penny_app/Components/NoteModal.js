@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Modal, Text, TouchableHighlight, View, TextInput, TouchableOpacity} from 'react-native';
+import {Actions} from 'react-native-router-flux'
 
 class NoteModal extends Component {
   constructor(props){
@@ -59,6 +60,13 @@ class NoteModal extends Component {
                   this.setNotes()
                 }}>
                 <Text style={styles.saveTextStyle}>Save Notes</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.saveButtonStyle}
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible)
+                  this.setNotes()
+                }}>
+                <Text style={styles.saveTextStyle}>Back</Text>
               </TouchableOpacity>
             </View>
           </View>
