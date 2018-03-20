@@ -16,15 +16,15 @@ class Card extends Component {
     numDate = parseInt(date.slice(11, 14))
 
     if (numDate > 12) {
-      hour = (parseInt(date.slice(11, 14))) - 12
+      hour = (parseInt(date.slice(11, 14))) - 6
       final = `${hour}:${date.slice(14,16)}pm`
     } else
     if (numDate == 12) {
-      hour = date.slice(12, 14)
+      hour = (parseInt(date.slice(12, 14))) - 6
       final = `${hour}${date.slice(14,16)}pm`
     } else {
-      hour = date.slice(11, 14)
-      final = `${hour}${date.slice(14,16)}am`
+      hour = (parseInt(date.slice(11, 14))) - 6
+      final = `${hour}:${date.slice(14,16)}am`
     }
 
     for (var i = 0; i < month.length; i++) {
@@ -98,8 +98,8 @@ const styles = {
     padding: 5,
   },
   paragraphStyle: {
-    color: '#A1A1A5',
-    fontSize: 15,
+    color: '#5f6063',
+    fontSize: 18,
     fontWeight: 'bold',
     paddingBottom: 10,
     padding: 5,
@@ -107,7 +107,7 @@ const styles = {
   pennyworkerStyle: {
     marginLeft: 7,
     color: '#982D37',
-    fontSize: 16,
+    fontSize: 18,
     padding: 5,
   },
   editDetails: {

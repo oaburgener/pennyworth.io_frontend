@@ -24,14 +24,14 @@ render () {
 
 const styles = {
   choreStyle: {
-    color: '#A1A1A5',
-    fontSize: 15,
+    color: '#5f6063',
+    fontSize: 18,
     padding: 5,
     fontWeight: 'bold',
   },
   noteStyle: {
-    color: '#A1A1A5',
-    fontSize: 15,
+    color: '#5f6063',
+    fontSize: 18,
     padding: 10,
     marginLeft: 50,
   },
