@@ -38,3 +38,4 @@ Backend code: https://github.com/oaburgener/pennyworth.io
 
 ## Team Members
 * [Olivia Burgener](https://github.com/oaburgener)
+* [Ashley Amato](https://github.com/ashleyamato)
