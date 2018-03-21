@@ -68,12 +68,10 @@ class Card extends Component {
     return cards
   }
 
-
   render () {
     return (
       <ScrollView>
         {this.props.userServices && this.renderCards()}
-        <Messaging />
       </ScrollView>
     )
   }
