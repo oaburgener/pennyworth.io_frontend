@@ -26,12 +26,15 @@ Task Management: https://trello.com/b/6AOjiCoP/pennyworth
 
 ## Technologies
 
+Backend code: https://github.com/oaburgener/pennyworth.io
+
 * Javascript/ES6
 * React Native
 * Redux
 * Express
 * Knex
 * PostgreSQL
+
 
 ## Team Members
 * [Olivia Burgener](https://github.com/oaburgener)
