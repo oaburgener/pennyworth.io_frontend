@@ -24,7 +24,7 @@ class Card extends Component {
       final = `${hour}${date.slice(14,16)}pm`
     } else {
       hour = (parseInt(date.slice(11, 14))) - 6
-      final = `${hour}:${date.slice(14,16)}am`
+      final = `${hour}:${date.slice(14,16)}pm`
     }
 
     for (var i = 0; i < month.length; i++) {
