@@ -6,7 +6,7 @@ Pennyworth is a full-stack application that allows users to schedule an on-deman
 
 Users sign up or sign in and view their dashboard of scheduled Pennyworkers. The dashboard displays the date and time of their scheduled appointment, along with what tasks will be completed.
 
-![alt text](img/login.png) ![alt text](img/schedule.png)
+![alt text](img/login.png =408x754) ![alt text](img/schedule.png =408x754)
 
 To schedule a new appointment, the user will select a day and time. User can also directly message their Pennyworker with any questions or concerns.
 
